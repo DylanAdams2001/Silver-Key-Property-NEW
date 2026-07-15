@@ -5,6 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Silver Key Property | Supported Housing Investment Guide</title>
 <link rel="stylesheet" href="styles.css" />
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1413414506119281');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel -->
 </head>
 <body>
 
@@ -354,6 +371,10 @@ function wireGuideForm(form, errorId) {
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending...';
 
+    // Shared with the Meta Pixel Lead event below so GHL's Conversions API
+    // can dedupe against this browser-side event using the same event_id.
+    const eventId = 'lead_' + Date.now() + '_' + Math.random().toString(36).slice(2);
+
     try {
       const response = await fetch(GHL_WEBHOOK_URL, {
         method: 'POST',
@@ -365,11 +386,16 @@ function wireGuideForm(form, errorId) {
           phone: form.querySelector('input[name="phone"]').value.trim(),
           investable_amount: form.querySelector('select[name="investRange"]').value,
           source: 'Supported Housing Funnel Page',
-          split_test_variant: 'B'
+          split_test_variant: 'B',
+          event_id: eventId
         })
       });
 
       if (!response.ok) throw new Error('Webhook responded with an error');
+
+      if (typeof fbq === 'function') {
+        fbq('track', 'Lead', { split_test_variant: 'B' }, { eventID: eventId });
+      }
 
       // Guide request captured: send them straight on to book a call.
       window.location.href = 'booking.html';
