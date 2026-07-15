@@ -36,6 +36,7 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
 }
 .quiz-card {
   background: var(--ground);
+  color: var(--ink);
   border: 1px solid var(--line);
   border-radius: 8px;
   overflow: hidden;
@@ -93,13 +94,9 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
 .t-role { font-size: 0.8rem; color: var(--ink-soft); }
 .t-caveat { text-align: center; font-size: 0.78rem; color: var(--ink-soft); margin: 22px auto 0; max-width: 60ch; }
 
-/* Buttons: swap the site's blue accent for a fixed near-black so the
-   quiz's own "next" action is the only thing that reads as a CTA. */
-.nav-cta, .submit-btn, .btn-primary {
-  background: #161616 !important;
-  color: #ffffff !important;
-}
-.nav-cta:hover, .submit-btn:hover, .btn-primary:hover { filter: brightness(1.25); }
+/* Quiz selection/progress state stays neutral black so it doesn't
+   compete with the submit button, which is the one thing that should
+   pop -- that stays the brand blue (var(--accent), set in styles.css). */
 .progress-fill { background: #161616; }
 .quiz-option.selected { border-color: #161616; }
 .quiz-option.selected .quiz-dot { border-color: #161616; background: #161616; }
