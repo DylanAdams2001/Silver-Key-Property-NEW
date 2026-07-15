@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Silver Key Property | Supported Housing Investment Guide</title>
+<title>Silver Key Property | Supported Housing Investment Blueprint</title>
 <link rel="stylesheet" href="styles.css" />
 <!-- Meta Pixel -->
 <script>
@@ -34,7 +34,6 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
   letter-spacing: 0.03em;
   padding: 10px 20px;
 }
-.hero--split .hero-inner { align-items: start; }
 .quiz-card {
   background: var(--ground);
   border: 1px solid var(--line);
@@ -69,9 +68,6 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
   font-size: 0.85rem; font-weight: 700; color: var(--ink-soft); cursor: pointer; text-align: center;
 }
 .hp-field { position: absolute; opacity: 0; height: 0; width: 0; pointer-events: none; }
-
-/* Credibility strip reuses the real stat numbers already on the page */
-.cred-strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 
 /* Inside the guide — numbered list */
 .learn-list { display: flex; flex-direction: column; max-width: 720px; margin: 0 auto; }
@@ -115,6 +111,11 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
 .review-stars { color: var(--accent); font-size: 0.85rem; letter-spacing: 1px; }
 .review-text { font-size: 0.86rem; font-weight: 700; }
 .review-divider { width: 1px; height: 18px; background: var(--line); }
+
+/* Center the logo when the nav links are hidden (mobile) */
+@media (max-width: 760px) {
+  .nav { justify-content: center; }
+}
 </style>
 </head>
 <body>
@@ -129,7 +130,7 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
   </nav>
 </header>
 
-<div class="announce">FREE GUIDE: How UK Investors Earn Government-Backed Rental Income From Supported Housing</div>
+<div class="announce">FREE BLUEPRINT: How UK Investors Earn Government-Backed Rental Income From Supported Housing</div>
 
 <main>
 
@@ -139,7 +140,7 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
       <div class="hero-copy-block">
         <span class="eyebrow">Free PDF · No cost · Instant access</span>
         <h1>Download Your Free <span class="hl">Supported Housing Blueprint</span></h1>
-        <p class="lede">Answer a few quick questions and we'll send your free guide immediately.</p>
+        <p class="lede">Answer a few quick questions and we'll send your free blueprint immediately.</p>
       </div>
 
       <div class="hero-form-panel" id="heroGuide">
@@ -165,8 +166,8 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
             <div class="quiz-inner">
               <div class="dq-icon">🙏</div>
               <div class="quiz-q">This may not be the right fit just yet.</div>
-              <p class="dq-text">Our opportunities typically start from around £75,000. If you're not quite there yet, the guide is still worth grabbing — it'll show you exactly what to build toward so you're ready when the time comes.</p>
-              <button type="button" class="btn-primary submit-btn" id="a-btn-dq-anyway" style="width:100%;">Send me the guide anyway</button>
+              <p class="dq-text">Our opportunities typically start from around £75,000. If you're not quite there yet, the blueprint is still worth grabbing — it'll show you exactly what to build toward so you're ready when the time comes.</p>
+              <button type="button" class="btn-primary submit-btn" id="a-btn-dq-anyway" style="width:100%;">Send me the blueprint anyway</button>
               <button type="button" class="btn-back" id="a-btn-back-dq">← Go back</button>
             </div>
           </div>
@@ -204,7 +205,7 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
           <div class="quiz-step" id="a-step-4">
             <div class="quiz-inner">
               <div class="step-label">Step 4 of 4</div>
-              <div class="quiz-q">Where should we send your free guide?</div>
+              <div class="quiz-q">Where should we send your free blueprint?</div>
               <form id="heroGuideForm" novalidate>
                 <div class="field">
                   <input class="hp-field" type="text" id="a-hp" name="website" tabindex="-1" autocomplete="off" />
@@ -225,9 +226,9 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
                 </div>
                 <label class="consent">
                   <input type="checkbox" required />
-                  <span>I'd like to receive the guide and occasional related updates by email. I can unsubscribe at any time.</span>
+                  <span>I'd like to receive the blueprint and occasional related updates by email. I can unsubscribe at any time.</span>
                 </label>
-                <button type="submit" class="submit-btn" id="a-btn-submit">Send me the free guide</button>
+                <button type="submit" class="submit-btn" id="a-btn-submit">Send me the free blueprint</button>
                 <div class="form-note">🔒 Your details are private. No spam, ever.</div>
                 <div class="form-error" id="heroFormError">Something went wrong sending your details. Please try again in a moment.</div>
               </form>
@@ -250,15 +251,6 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
     </div>
   </div>
 
-  <!-- CREDIBILITY STRIP (real figures already used elsewhere on the page) -->
-  <div class="wrap">
-    <div class="stat-strip cred-strip">
-      <div class="stat"><span class="num">8.25%</span><span class="label">Target net annual income</span></div>
-      <div class="stat"><span class="num">20–25 yr</span><span class="label">Full repairing institutional leases</span></div>
-      <div class="stat"><span class="num">RPI</span><span class="label">Annual rent uplifts, index-linked</span></div>
-      <div class="stat"><span class="num">£75k</span><span class="label">Indicative minimum investment</span></div>
-    </div>
-  </div>
 
   <!-- PROOF BAND -->
   <section class="proof">
@@ -272,7 +264,7 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
   <section>
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">Inside the Guide</span>
+        <span class="eyebrow">Inside the Blueprint</span>
         <h2>What you'll discover</h2>
       </div>
       <div class="learn-list">
@@ -302,7 +294,7 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
       <div class="section-head">
         <span class="eyebrow">Illustrative Example</span>
         <h2>What a return actually looks like, unit by unit.</h2>
-        <p>Figures below reflect real supported housing unit economics, generalised here for illustration. The guide includes how these numbers are built up.</p>
+        <p>Figures below reflect real supported housing unit economics, generalised here for illustration. The blueprint includes how these numbers are built up.</p>
       </div>
       <div class="unit-grid">
         <div class="unit-card">
@@ -402,11 +394,11 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
         </details>
         <details class="faq-item">
           <summary>Where does the rent actually come from?</summary>
-          <p>Primarily Housing Benefit or Universal Credit housing costs, paid to the registered provider, who in turn pays the lease rent to the property owner. The guide sets out how this differs from standard buy-to-let income.</p>
+          <p>Primarily Housing Benefit or Universal Credit housing costs, paid to the registered provider, who in turn pays the lease rent to the property owner. The blueprint sets out how this differs from standard buy-to-let income.</p>
         </details>
         <details class="faq-item">
           <summary>What are the key risks?</summary>
-          <p>These include provider covenant strength, changes to welfare policy or local authority commissioning, property-specific voids between leases, and the general illiquidity of direct property investment. Capital is at risk and returns are not guaranteed. The guide covers this in full.</p>
+          <p>These include provider covenant strength, changes to welfare policy or local authority commissioning, property-specific voids between leases, and the general illiquidity of direct property investment. Capital is at risk and returns are not guaranteed. The blueprint covers this in full.</p>
         </details>
         <details class="faq-item">
           <summary>Is this a liquid investment?</summary>
@@ -414,7 +406,7 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
         </details>
         <details class="faq-item">
           <summary>Can I hold this in a pension?</summary>
-          <p>Some structures are compatible with SIPPs and SSASs. Eligibility depends on the specific property or fund structure. This is covered property-by-property in the guide.</p>
+          <p>Some structures are compatible with SIPPs and SSASs. Eligibility depends on the specific property or fund structure. This is covered property-by-property in the blueprint.</p>
         </details>
       </div>
     </div>
@@ -449,8 +441,8 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
           <div class="quiz-inner">
             <div class="dq-icon">🙏</div>
             <div class="quiz-q">This may not be the right fit just yet.</div>
-            <p class="dq-text">Our opportunities typically start from around £75,000. If you're not quite there yet, the guide is still worth grabbing — it'll show you exactly what to build toward so you're ready when the time comes.</p>
-            <button type="button" class="btn-primary submit-btn" id="b-btn-dq-anyway" style="width:100%;">Send me the guide anyway</button>
+            <p class="dq-text">Our opportunities typically start from around £75,000. If you're not quite there yet, the blueprint is still worth grabbing — it'll show you exactly what to build toward so you're ready when the time comes.</p>
+            <button type="button" class="btn-primary submit-btn" id="b-btn-dq-anyway" style="width:100%;">Send me the blueprint anyway</button>
             <button type="button" class="btn-back" id="b-btn-back-dq">← Go back</button>
           </div>
         </div>
@@ -485,7 +477,7 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
         <div class="quiz-step" id="b-step-4">
           <div class="quiz-inner">
             <div class="step-label">Step 4 of 4</div>
-            <div class="quiz-q">Where should we send your free guide?</div>
+            <div class="quiz-q">Where should we send your free blueprint?</div>
             <form id="guideForm" novalidate>
               <div class="field">
                 <input class="hp-field" type="text" id="b-hp" name="website" tabindex="-1" autocomplete="off" />
@@ -506,9 +498,9 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
               </div>
               <label class="consent">
                 <input type="checkbox" required />
-                <span>I'd like to receive the guide and occasional related updates by email. I can unsubscribe at any time.</span>
+                <span>I'd like to receive the blueprint and occasional related updates by email. I can unsubscribe at any time.</span>
               </label>
-              <button type="submit" class="submit-btn" id="b-btn-submit">Send me the free guide</button>
+              <button type="submit" class="submit-btn" id="b-btn-submit">Send me the free blueprint</button>
               <div class="form-note">🔒 Your details are private. No spam, ever.</div>
               <div class="form-error" id="formError">Something went wrong sending your details. Please try again in a moment.</div>
             </form>
@@ -676,7 +668,7 @@ function initQuiz(cfg) {
       window.location.href = 'booking.html';
     } catch (err) {
       submitBtn.disabled = false;
-      submitBtn.textContent = 'Send me the free guide';
+      submitBtn.textContent = 'Send me the free blueprint';
       errorBox.classList.add('show');
     }
   });
