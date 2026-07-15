@@ -180,10 +180,12 @@ header.site {
 }
 .hero-form-panel .capture-form { padding: 0; box-shadow: none; background: transparent; }
 @media (max-width: 860px) {
-  /* Mobile: skip the hero copy/CTA entirely, the form is the first thing shown. */
+  /* Mobile: keep the hero headline/copy above the form, but drop the
+     "download the guide" button since the form itself is right below. */
   .hero--split { padding-top: 28px; }
   .hero--split .hero-inner { grid-template-columns: 1fr; }
-  .hero--split .hero-copy-block { display: none; }
+  .hero--split .hero-ctas { display: none; }
+  .hero--split .hero p.lede { margin-bottom: 24px; }
   .hero-form-panel { padding: 24px; border-radius: 0; border-left: none; border-right: none; }
 }
 .hero h1 {
