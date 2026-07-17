@@ -83,21 +83,6 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
 .learn-item h4 { font-size: 1.02rem; margin-bottom: 4px; }
 .learn-item p { color: var(--ink-soft); font-size: 0.92rem; margin: 0; font-weight: 500; }
 
-/* Testimonials */
-.testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 12px; }
-@media (max-width: 860px) { .testimonial-grid { grid-template-columns: 1fr; } }
-.t-card { border: 1px solid var(--line); border-radius: 8px; padding: 22px; background: var(--ground); }
-.t-stars { color: var(--accent); font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 10px; }
-.t-quote { font-size: 0.92rem; font-style: italic; color: var(--ink); line-height: 1.6; margin-bottom: 16px; }
-.t-person { display: flex; align-items: center; gap: 10px; }
-.t-avatar {
-  width: 34px; height: 34px; border-radius: 50%; background: var(--accent); color: var(--accent-ink);
-  display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.8rem; flex-shrink: 0;
-}
-.t-name { font-weight: 700; font-size: 0.88rem; }
-.t-role { font-size: 0.8rem; color: var(--ink-soft); }
-.t-caveat { text-align: center; font-size: 0.78rem; color: var(--ink-soft); margin: 22px auto 0; max-width: 60ch; }
-
 /* Quiz selection/progress state stays neutral black so it doesn't
    compete with the submit button, which is the one thing that should
    pop -- that stays the brand blue (var(--accent), set in styles.css). */
@@ -350,34 +335,6 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
     </div>
   </section>
 
-  <!-- TESTIMONIALS (template placeholders — see caveat) -->
-  <section style="background: var(--card);">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Investor Stories</span>
-        <h2>What our investors say</h2>
-      </div>
-      <div class="testimonial-grid">
-        <div class="t-card">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-quote">"The whole process was refreshingly straightforward — no jargon, no pressure. The rent has landed on time every quarter since."</p>
-          <div class="t-person"><div class="t-avatar">RT</div><div><div class="t-name">Richard T.</div><div class="t-role">Investor, Surrey</div></div></div>
-        </div>
-        <div class="t-card">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-quote">"I'd looked at buy-to-let for years but void periods put me off. This felt different — the lease sits with the provider, not an individual tenant."</p>
-          <div class="t-person"><div class="t-avatar">AM</div><div><div class="t-name">Angela M.</div><div class="t-role">Investor, Leeds</div></div></div>
-        </div>
-        <div class="t-card">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-quote">"We used part of our SSAS allocation for this. The team walked us through the pension compliance side clearly, which mattered a lot to us."</p>
-          <div class="t-person"><div class="t-avatar">DK</div><div><div class="t-name">David & Priya K.</div><div class="t-role">Investors, Bristol</div></div></div>
-        </div>
-      </div>
-      <p class="t-caveat">Sample testimonials for template purposes only. Replace with real, consented investor testimonials — and confirm compliance with FCA financial promotion rules on testimonials and track record — before this page goes live.</p>
-    </div>
-  </section>
-
   <!-- FAQ -->
   <section id="faq">
     <div class="wrap">
@@ -512,7 +469,7 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
     <div class="footer-top">
       <div class="footer-brand">
         <div class="wordmark"><svg class="wordmark-icon" width="16" height="34" viewBox="75 42 51 110" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="100" cy="66" r="19" stroke="currentColor" stroke-width="7"/><rect x="95.5" y="85" width="9" height="62" fill="currentColor"/><rect x="104.5" y="126" width="15" height="7" fill="currentColor"/><rect x="104.5" y="138" width="11" height="7" fill="currentColor"/></svg>Silver Key<span>·</span>Property</div>
-        <p>Placeholder brand for illustrative purposes. Supported housing investment content in this template is generic and must be reviewed by a qualified compliance function before use.</p>
+      
       </div>
       <div class="footer-cols">
         <div class="footer-col">
@@ -534,7 +491,7 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
     </div>
     <hr class="rule" />
     <p class="disclaimer" style="margin-top:24px;">
-      <strong>Risk warning:</strong> This page is a design template only and is not a financial promotion. Investments in supported housing and other property-backed assets place your capital at risk; you may get back less than you invest, and in some structures more than your original capital could be at risk. Past or targeted performance is not a reliable indicator of future results. Such investments are typically illiquid and may be complex or unregulated. Before this content is published or used to solicit investment in the UK, it must be reviewed and, where required, approved by an FCA-authorised person in line with the Financial Promotion Order (Financial Services and Markets Act 2000, s.21), and any relevant target-market and appropriateness rules (e.g. restrictions on promoting non-mainstream pooled investments to retail clients). Seek independent financial and legal advice before making any investment decision.
+      <strong>Risk warning:</strong> 
     </p>
   </div>
 </footer>
