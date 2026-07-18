@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Blueprint | Silver Key Property</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+<style>
+  :root {
+    --ink: #0a0a0a;
+    --ink-soft: #57595c;
+    --line: #e3e3e0;
+    --card: #f7f7f5;
+    --accent: #1652f0;
+    --accent-ink: #ffffff;
+    --face: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #e9e9e7; }
+  body { font-family: var(--face); color: var(--ink); line-height: 1.6; }
+  h1, h2, h3 { font-family: var(--face); font-weight: 800; letter-spacing: -0.02em; margin: 0; color: var(--ink); }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 20px; }
+  li { margin-bottom: 8px; }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 20px auto;
+    background: #ffffff;
+    padding: 22mm 20mm;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    position: relative;
+  }
+  .page-num {
+    position: absolute;
+    bottom: 12mm;
+    right: 20mm;
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+    font-weight: 600;
+  }
+  .wordmark { font-weight: 800; font-size: 1rem; letter-spacing: -0.01em; }
+  .wordmark span { color: var(--accent); }
+
+  .eyebrow {
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  /* Cover page */
+  .page.cover-page { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+  .cover-photo { width: 100%; height: 128mm; object-fit: cover; object-position: center 35%; display: block; }
+  .cover-dark {
+    flex: 1;
+    background: #0a0a0a;
+    color: #f5f5f3;
+    padding: 30px 20mm 26px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .cover-dark .wordmark { color: #fff; }
+  .cover-dark .wordmark span { color: #3d74ff; }
+  .cover-bar { height: 6px; background: #3d74ff; width: 64px; border-radius: 3px; margin-bottom: 22px; }
+  .cover-dark .kicker { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #3d74ff; display: block; margin-bottom: 16px; }
+  .cover-dark h1 { font-size: 2.7rem; line-height: 1.05; color: #fff; margin-bottom: 18px; }
+  .cover-dark p.standfirst { font-size: 1.05rem; color: #a6a8ab; max-width: 34ch; font-weight: 500; margin: 0; }
+  .cover-dark .cover-bottom { border-top: 1px solid #262626; padding-top: 14px; font-size: 0.78rem; color: #9ea1a4; display: flex; justify-content: space-between; margin: 0; }
+
+  /* Section photo bands */
+  .img-band { width: 100%; height: 46mm; object-fit: cover; border-radius: 8px; margin-bottom: 20px; display: block; }
+
+  /* Divider / pull-quote page */
+  .page.divider-page { height: 297mm; min-height: 297mm; padding: 0; position: relative; overflow: hidden; }
+  .divider-photo { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+  .divider-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(195deg, rgba(10,10,10,0.1) 30%, rgba(10,10,10,0.82) 85%);
+    display: flex; align-items: flex-end;
+    padding: 20mm;
+  }
+  .divider-quote { max-width: 30ch; }
+  .divider-quote .quote-mark { font-size: 3.4rem; color: #3d74ff; line-height: 1; display: block; margin-bottom: 4px; font-weight: 800; }
+  .divider-quote p { color: #fff; font-size: 1.55rem; font-weight: 700; line-height: 1.32; margin: 0; letter-spacing: -0.01em; }
+  .divider-page .page-num { color: #f5f5f3; }
+
+  /* Contents page */
+  .contents-list { list-style: none; padding: 0; margin: 24px 0 0; }
+  .contents-list li {
+    display: flex; align-items: baseline; gap: 14px;
+    padding: 14px 0; border-bottom: 1px solid var(--line);
+    font-weight: 700; font-size: 1.02rem;
+  }
+  .contents-list li .num { color: var(--accent); font-weight: 800; width: 24px; flex-shrink: 0; }
+  .intro-text { margin-top: 28px; font-size: 1rem; color: var(--ink-soft); }
+
+  h2.section-title { font-size: 1.7rem; margin-bottom: 6px; }
+  .section-sub { color: var(--ink-soft); font-size: 0.98rem; margin-bottom: 24px; }
+
+  .callout {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 18px 20px;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    margin: 18px 0;
+  }
+  .callout strong { color: var(--ink); }
+
+  .steps { list-style: none; padding: 0; margin: 20px 0; counter-reset: step; }
+  .steps li {
+    counter-increment: step;
+    display: flex; gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.95rem;
+  }
+  .steps li:last-child { border-bottom: none; }
+  .steps li::before {
+    content: counter(step);
+    flex-shrink: 0;
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--accent-ink);
+    font-weight: 800; font-size: 0.8rem;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  table.compare { width: 100%; border-collapse: separate; border-spacing: 0; margin: 20px 0; font-size: 0.85rem; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); }
+  table.compare th, table.compare td { padding: 12px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+  table.compare tr:last-child td { border-bottom: none; }
+  table.compare th { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 800; color: #fff; }
+  table.compare th:first-child { background: var(--card); }
+  table.compare th.traditional { background: #3a3d42; }
+  table.compare th.supported { background: var(--accent); }
+  table.compare td:first-child { font-weight: 700; background: var(--card); width: 21%; font-size: 0.82rem; }
+  table.compare td.traditional-cell { color: var(--ink-soft); }
+  table.compare td.supported-cell { background: rgba(22,82,240,0.07); color: var(--ink); font-weight: 600; }
+
+  .two-col { display: flex; gap: 28px; margin-top: 20px; }
+  .two-col .col { flex: 1; }
+  .two-col h3 { font-size: 0.95rem; margin-bottom: 10px; color: var(--accent); }
+  .two-col ul { padding-left: 18px; }
+  .two-col li { font-size: 0.9rem; margin-bottom: 8px; }
+
+  .qualify-grid { display: flex; gap: 24px; margin-top: 20px; }
+  .qualify-col { flex: 1; border-radius: 8px; padding: 18px 20px; border: 1px solid var(--line); }
+  .qualify-col.yes { background: var(--card); }
+  .qualify-col h3 { font-size: 0.95rem; margin-bottom: 12px; }
+  .qualify-col ul { list-style: none; padding: 0; margin: 0; }
+  .qualify-col li { font-size: 0.87rem; padding-left: 20px; position: relative; margin-bottom: 10px; }
+  .qualify-col.yes li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: 800; }
+  .qualify-col.no li::before { content: "–"; position: absolute; left: 0; color: var(--ink-soft); font-weight: 800; }
+
+  .faq-item { padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-item .q { font-weight: 700; font-size: 0.95rem; margin-bottom: 4px; }
+  .faq-item .a { font-size: 0.9rem; color: var(--ink-soft); margin: 0; }
+
+  .disclaimer-box {
+    margin-top: auto;
+    border-top: 1px solid var(--line);
+    padding-top: 12px;
+    font-size: 0.68rem;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  .disclaimer-box p { margin: 0 0 8px; }
+  .disclaimer-box p:last-child { margin-bottom: 0; }
+
+  .cta-box {
+    background: var(--ink);
+    color: #fff;
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin: 14px 0;
+  }
+  .cta-box h3 { color: #fff; font-size: 1.05rem; margin-bottom: 6px; }
+  .cta-box p { color: #c7c8ca; margin-bottom: 0; font-size: 0.88rem; }
+
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none; margin: 0; page-break-after: always; }
+    .page:last-child { page-break-after: auto; }
+  }
+  @page { size: A4; margin: 0; }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: COVER -->
+<div class="page cover-page">
+  <img class="cover-photo" src="images/guide-cover.jpg" alt="" />
+  <div class="cover-dark">
+    <div class="wordmark">Silver Key<span>·</span>Property</div>
+    <div>
+      <div class="cover-bar"></div>
+      <span class="kicker">Investor Guide</span>
+      <h1>The<br />Blueprint</h1>
+      <p class="standfirst">A practical guide to investing in Specialist Supported Housing, and the government-facilitated rental income model behind it.</p>
+    </div>
+    <div class="cover-bottom">
+      <span>Prepared for prospective investors</span>
+      <span>silverkeyproperty.co.uk</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2: CONTENTS + INTRO -->
+<div class="page">
+  <span class="eyebrow">Contents</span>
+  <h2 class="section-title">What's inside this guide</h2>
+  <ol class="contents-list">
+    <li><span class="num">01</span> What Is Supported Housing?</li>
+    <li><span class="num">02</span> How It Works For The Investor</li>
+    <li><span class="num">03</span> Supported Housing vs Traditional Buy-to-Let</li>
+    <li><span class="num">04</span> Understanding Your Rental Income</li>
+    <li><span class="num">05</span> What's Managed For You, And What Isn't</li>
+    <li><span class="num">06</span> Exit Options And Flexibility</li>
+    <li><span class="num">07</span> Is This The Right Investment For You?</li>
+    <li><span class="num">08</span> Risks, Questions And Next Steps</li>
+  </ol>
+  <p class="intro-text">This guide is here to give you a clear, honest picture of what investing in Specialist Supported Housing actually involves: how the income works, what you're responsible for, what's handled on your behalf, and the questions worth asking before you commit any capital.</p>
+  <p class="intro-text">It won't cover every property-specific detail. That's what a conversation with our team is for, once you've had a chance to read through this and decide whether the asset class deserves a closer look.</p>
+  <div class="page-num">02</div>
+</div>
+
+<!-- PAGE 3: SECTION 01 -->
+<div class="page">
+  <span class="eyebrow">01 &nbsp;·&nbsp; The Basics</span>
+  <h2 class="section-title">What Is Supported Housing?</h2>
+  <p class="section-sub">A quick grounding before anything else.</p>
+
+  <img class="img-band" src="images/guide-conversation.jpg" style="object-position: center 22%;" alt="A supportive conversation between two people" />
+
+  <p>Specialist Supported Housing provides long-term homes for adults who need a level of additional support to live independently. That includes people with learning disabilities, physical disabilities, autism, and mental health conditions. The properties themselves are ordinary residential homes, often indistinguishable from any other house or apartment on the street, but they're adapted with these residents in mind and let to an approved housing association rather than to an individual tenant.</p>
+
+  <p>The need for this kind of housing has been building for years. The National Housing Federation estimates England will require an additional 167,329 supported housing units by 2040, around a third more than exists today. Separately, it's estimated that over 600,000 adults across England are currently waiting for a suitable supported housing placement. Every property that comes into the sector is one fewer person left in unsuitable, or more costly, institutional care.</p>
+
+  <div class="callout"><strong>Who typically lives in these properties:</strong> older adults needing assisted living support, adults with learning disabilities or physical impairments, people with autism or complex mental health needs, young adults requiring specialist support, and individuals moving on from housing insecurity or unsuitable care settings.</div>
+
+  <p>This isn't a niche corner of the property market. It's a structural gap between what the country needs and what currently exists, and it's the reason private capital is being invited in to help close it.</p>
+  <div class="page-num">03</div>
+</div>
+
+<!-- PAGE 4: SECTION 02 -->
+<div class="page">
+  <span class="eyebrow">02 &nbsp;·&nbsp; The Mechanics</span>
+  <h2 class="section-title">How It Works For The Investor</h2>
+  <p class="section-sub">The process is more straightforward than it first sounds.</p>
+
+  <img class="img-band" src="images/guide-consultant.jpg" style="object-position: center 25%;" alt="A consultant talking through the details of a property purchase" />
+
+  <ol class="steps">
+    <li>You purchase the property outright and become the registered legal owner, with your name on the title deeds.</li>
+    <li>An approved housing association takes on a long-term management agreement, commonly running for 25 years.</li>
+    <li>The housing association places residents and manages the day-to-day running of the property, including the relationship with residents and local authorities.</li>
+    <li>You receive monthly rental income for the duration of the agreement.</li>
+  </ol>
+
+  <p>A long agreement term isn't arbitrary. Housing associations plan around continuity of care, residents often stay in these homes for years, and a shorter arrangement would undermine the stability the sector depends on.</p>
+
+  <p>For investors, it also means the terms of how your property is managed are set out clearly from day one, rather than being renegotiated every year or two. You own the asset. The housing association runs it. That division is really the whole model.</p>
+  <div class="page-num">04</div>
+</div>
+
+<!-- PAGE 5: SECTION 03 -->
+<div class="page">
+  <span class="eyebrow">03 &nbsp;·&nbsp; The Comparison</span>
+  <h2 class="section-title">Supported Housing vs Traditional Buy-to-Let</h2>
+  <p class="section-sub">Where the model actually differs from the buy-to-let you already know.</p>
+
+  <table class="compare">
+    <tr><th>&nbsp;</th><th class="traditional">Traditional Buy-to-Let</th><th class="supported">Supported Housing</th></tr>
+    <tr><td>Finding tenants</td><td class="traditional-cell">Subject to market demand, with possible void periods</td><td class="supported-cell">Residents placed by an approved housing association</td></tr>
+    <tr><td>Rental income</td><td class="traditional-cell">Tied to occupancy and local market conditions</td><td class="supported-cell">Structured through a long-term management agreement</td></tr>
+    <tr><td>Day-to-day management</td><td class="traditional-cell">Handled by the landlord or an appointed agent</td><td class="supported-cell">Handled by the housing association</td></tr>
+    <tr><td>Maintenance</td><td class="traditional-cell">Landlord's responsibility, sometimes offset by a sinking fund</td><td class="supported-cell">Typically covered under the terms of the lease</td></tr>
+    <tr><td>Void periods</td><td class="traditional-cell">Vacancy risk sits with the landlord</td><td class="supported-cell">Occupancy is managed by the housing provider</td></tr>
+    <tr><td>Your involvement</td><td class="traditional-cell">Hands-on</td><td class="supported-cell">Hands-off</td></tr>
+  </table>
+
+  <p>None of this makes supported housing risk-free, and it isn't a substitute for buy-to-let in every situation. It's a genuinely different model, built around a different kind of tenant relationship, and it suits a different kind of investor. Section 07 covers that in more detail.</p>
+  <div class="page-num">05</div>
+</div>
+
+<!-- PAGE 6: SECTION 04 -->
+<div class="page">
+  <span class="eyebrow">04 &nbsp;·&nbsp; The Income</span>
+  <h2 class="section-title">Understanding Your Rental Income</h2>
+  <p class="section-sub">Where the money actually comes from, and how it moves.</p>
+
+  <p>Rental income in supported housing is funded through Housing Benefit and Universal Credit housing cost payments, administered by the relevant local authority and paid to the approved housing provider, who in turn pays you as the property owner. It's a different funding mechanism to the open rental market, and one that exists specifically to fund this kind of accommodation.</p>
+
+  <p>Most agreements include an annual rental increase, commonly a minimum of 1%, often linked to inflation. The intention is straightforward: to help the real value of your income keep pace with the cost of living over what is typically a very long hold period, rather than staying flat for two and a half decades.</p>
+
+  <div class="callout">The length and structure of the management agreement is really what you're buying into, as much as the property itself. It's what gives both you and the housing association the confidence to plan long-term, and it's the reason this model looks so different to standard buy-to-let, where every tenancy has to be found and managed individually.</div>
+
+  <p>As with any income-producing asset, none of this is guaranteed. Payments depend on the continued operation of the agreement and the financial position of the housing association involved. Section 08 goes into the risks worth understanding before you commit.</p>
+  <div class="page-num">06</div>
+</div>
+
+<!-- PAGE 7: SECTION 05 -->
+<div class="page">
+  <span class="eyebrow">05 &nbsp;·&nbsp; The Division Of Responsibility</span>
+  <h2 class="section-title">What's Managed For You, And What Isn't</h2>
+  <p class="section-sub">A clear line between the housing association's job and yours.</p>
+
+  <div class="two-col">
+    <div class="col">
+      <h3>Managed by the housing association</h3>
+      <ul>
+        <li>Placing and managing residents</li>
+        <li>Day-to-day property and tenancy management</li>
+        <li>Collecting and administering rental payments</li>
+        <li>Liaising with local authorities and support services</li>
+        <li>Maintenance and repairs, in line with the agreement</li>
+        <li>Compliance relating to supported housing operations</li>
+        <li>Re-letting the property if a resident moves on</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h3>You're responsible for</h3>
+      <ul>
+        <li>The purchase price of the property</li>
+        <li>Legal fees and Stamp Duty Land Tax, where applicable</li>
+        <li>Any financing costs, if not purchasing in cash</li>
+        <li>Ongoing due diligence on your investment</li>
+      </ul>
+    </div>
+  </div>
+
+  <p style="margin-top: 20px;">In practice, this is what people mean when they call supported housing a hands-off investment. Once the purchase completes, the housing association takes on the operational side, and your involvement is genuinely limited from that point on.</p>
+  <div class="page-num">07</div>
+</div>
+
+<!-- PAGE 8: DIVIDER -->
+<div class="page divider-page">
+  <img class="divider-photo" src="images/guide-hands.jpg" alt="" />
+  <div class="divider-overlay">
+    <div class="divider-quote">
+      <span class="quote-mark">&ldquo;</span>
+      <p>A long-term home for someone who needs one. A long-term income stream for the investor who funds it.</p>
+    </div>
+  </div>
+  <div class="page-num">08</div>
+</div>
+
+<!-- PAGE 9: SECTION 06 -->
+<div class="page">
+  <span class="eyebrow">06 &nbsp;·&nbsp; Exiting The Investment</span>
+  <h2 class="section-title">Exit Options And Flexibility</h2>
+  <p class="section-sub">This is a long-term hold, but it isn't a life sentence.</p>
+
+  <p>Supported housing is built to be a long-term hold, and it's worth going in with that mindset. That said, most agreements include a minimum period, commonly the first few years, after which you're free to sell if your circumstances or objectives change.</p>
+
+  <p>Because the property must continue to operate as supported housing, it's typically sold on to another investor rather than an owner-occupier. In practice, the existing management agreement is often part of what makes it attractive to a buyer: whoever takes it on inherits the same clarity and continuity you had.</p>
+
+  <p>At the end of the agreement term, there are usually a few paths forward: renew the arrangement, sell the property, or take back full control and manage it independently. Which makes sense will depend on your circumstances at the time, and on the housing association's plans for the property going forward.</p>
+
+  <div class="callout">Some individual opportunities include an additional option agreement in the first few years, a separate legal mechanism that applies if the property attracts an early offer significantly above its purchase price. Where this applies, it will be set out clearly in that property's own paperwork. It isn't something to assume applies universally across every opportunity.</div>
+  <div class="page-num">09</div>
+</div>
+
+<!-- PAGE 10: SECTION 07 -->
+<div class="page">
+  <span class="eyebrow">07 &nbsp;·&nbsp; Fit</span>
+  <h2 class="section-title">Is This The Right Investment For You?</h2>
+  <p class="section-sub">Supported housing suits a specific kind of investor. Here's how to tell.</p>
+
+  <div class="qualify-grid">
+    <div class="qualify-col yes">
+      <h3>Likely a good fit if you're</h3>
+      <ul>
+        <li>Looking for income over a 10+ year horizon, not a quick flip</li>
+        <li>Comfortable tying up capital in an illiquid, long-term asset</li>
+        <li>Wanting a hands-off investment with greater security than traditional investment classes</li>
+        <li>Interested in a return backed by genuine social need, not sentiment</li>
+      </ul>
+    </div>
+    <div class="qualify-col no">
+      <h3>Probably not, if you're</h3>
+      <ul>
+        <li>Needing access to this capital within the next few years</li>
+        <li>Looking to actively manage or renovate a property yourself</li>
+        <li>Uncomfortable with property-related risk and illiquidity</li>
+        <li>Expecting guaranteed, risk-free returns (they don't exist here, or anywhere else)</li>
+      </ul>
+    </div>
+  </div>
+
+  <p style="margin-top: 22px;">A few practical points worth knowing upfront. Many supported housing purchases are cash purchase only, since some lenders treat the sector as non-standard and mortgage availability can be limited. As a general guide, this asset class typically requires a minimum of around £150,000 to get started, though this varies case by case depending on the specific opportunity. As with any property purchase, you'll need to complete standard identity, address and proof-of-funds checks. And because these properties are designed specifically for supported living, they aren't suitable to live in yourself. This is an income investment, not a home.</p>
+  <div class="page-num">10</div>
+</div>
+
+<!-- PAGE 11: SECTION 08 -->
+<div class="page">
+  <span class="eyebrow">08 &nbsp;·&nbsp; Before You Go Further</span>
+  <h2 class="section-title">Risks, Questions And Next Steps</h2>
+  <p class="section-sub">The honest part. Read this section properly.</p>
+
+  <p style="margin-bottom: 8px;">As with any investment, it's worth going in clear-eyed about what can affect performance. The main factors to understand are the financial strength of the housing association managing your property, changes to welfare policy or local authority commissioning, void periods between residents, and the general illiquidity of direct property investment. Capital is at risk, and returns are not guaranteed.</p>
+
+  <div class="faq-item">
+    <p class="q">What happens if the housing association managing my property stops trading?</p>
+    <p class="a">Given the ongoing shortage of supported housing and consistent demand from local authorities, arrangements are typically made to transfer management to another approved provider, maintaining continuity for residents. It's a risk worth understanding properly rather than dismissing.</p>
+  </div>
+  <div class="faq-item">
+    <p class="q">Do I actually own the property?</p>
+    <p class="a">Yes. You're the full legal owner and your name sits on the title deeds, the same as with any other property purchase.</p>
+  </div>
+  <div class="faq-item">
+    <p class="q">Is any of this financial advice?</p>
+    <p class="a">No. This guide is for general information only. It isn't personal financial advice and nothing here should be treated as a recommendation. We'd always encourage independent financial and legal advice before committing any capital.</p>
+  </div>
+
+  <div class="cta-box">
+    <h3>Ready for the next step?</h3>
+    <p>If this has raised more questions than it's answered, that's a good sign, it means you're doing this properly. Book a short call with our team to talk through current availability and anything in this guide you'd like to go over in more depth.</p>
+  </div>
+  <div class="page-num">11</div>
+</div>
+
+<!-- PAGE 12: DISCLAIMER -->
+<div class="page">
+  <span class="eyebrow">Important Information</span>
+  <h2 class="section-title">Risk Warning &amp; Disclaimer</h2>
+  <div class="disclaimer-box" style="margin-top: 20px; border-top: none; padding-top: 0; font-size: 0.78rem;">
+    <p>This website and the accompanying guide are provided for general information and educational purposes only, to help readers understand the supported housing sector as an asset class. Nothing here describes the terms of, or constitutes an offer, solicitation, invitation, or inducement to invest in, any specific property, scheme, or investment opportunity.</p>
+    <p>Nothing on this page or in the guide constitutes financial, legal, tax, or investment advice, and none of it should be relied on as such. Silver Key Property is not authorised or regulated by the Financial Conduct Authority to give investment advice, and nothing here is a personal recommendation.</p>
+    <p>If, after reading the guide, you want to explore a specific opportunity in this sector, you'll be directed to a separate process, completely independent of Silver Key Property. Any specific opportunity will only be presented following that separate process, and any related financial promotion will be issued or approved in line with section 21 of the Financial Services and Markets Act 2000.</p>
+    <p>Property investment of any kind carries risk. Property values can fall as well as rise, income is not guaranteed, and property is generally illiquid, it may be difficult to sell or exit quickly. Past performance, and any figures referenced generally in relation to this sector, are not a reliable indicator of future results. You should not invest money you cannot afford to lose, and should seek independent financial and legal advice before making any investment decision.</p>
+    <p>By submitting your details, you consent to being contacted about the free guide and related educational content.</p>
+    <p>Silver Key Property &nbsp;·&nbsp; silverkeyproperty.co.uk</p>
+  </div>
+  <div class="page-num">12</div>
+</div>
+
+</body>
+</html>

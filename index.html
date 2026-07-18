@@ -38,6 +38,7 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
   letter-spacing: 0.03em;
   padding: 10px 20px;
 }
+@media (max-width: 860px) { .announce { padding: 14px 20px; } }
 .quiz-card {
   background: var(--ground);
   color: var(--ink);
@@ -83,6 +84,21 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
 .learn-item h4 { font-size: 1.02rem; margin-bottom: 4px; }
 .learn-item p { color: var(--ink-soft); font-size: 0.92rem; margin: 0; font-weight: 500; }
 
+/* Testimonials */
+.testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 12px; }
+@media (max-width: 860px) { .testimonial-grid { grid-template-columns: 1fr; } }
+.t-card { border: 1px solid var(--line); border-radius: 8px; padding: 22px; background: var(--ground); }
+.t-stars { color: var(--accent); font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 10px; }
+.t-quote { font-size: 0.92rem; font-style: italic; color: var(--ink); line-height: 1.6; margin-bottom: 16px; }
+.t-person { display: flex; align-items: center; gap: 10px; }
+.t-avatar {
+  width: 34px; height: 34px; border-radius: 50%; background: var(--accent); color: var(--accent-ink);
+  display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.8rem; flex-shrink: 0;
+}
+.t-name { font-weight: 700; font-size: 0.88rem; }
+.t-role { font-size: 0.8rem; color: var(--ink-soft); }
+.t-caveat { text-align: center; font-size: 0.78rem; color: var(--ink-soft); margin: 22px auto 0; max-width: 60ch; }
+
 /* Quiz selection/progress state stays neutral black so it doesn't
    compete with the submit button, which is the one thing that should
    pop -- that stays the brand blue (var(--accent), set in styles.css). */
@@ -103,6 +119,48 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
 @media (max-width: 760px) {
   .nav { justify-content: center; }
 }
+
+/* Key benefits grid */
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 12px;
+}
+@media (max-width: 980px) { .benefit-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .benefit-grid { grid-template-columns: 1fr; } }
+.benefit-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 24px;
+  background: var(--card);
+}
+.benefit-icon {
+  width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 7px;
+  background: var(--ground);
+  border: 1px solid var(--line);
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+.benefit-icon svg { width: 20px; height: 20px; }
+.benefit-text { font-size: 0.92rem; font-weight: 600; line-height: 1.5; margin: 0; }
+
+.section-photo-strip {
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 12px 0 40px;
+  border: 1px solid var(--line);
+}
+.section-photo-strip img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+}
+@media (max-width: 700px) { .section-photo-strip img { height: 220px; } .section-photo-strip { margin: 12px 0 20px; } }
 </style>
 </head>
 <body>
@@ -111,13 +169,13 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
   <nav class="nav">
     <div class="wordmark"><svg class="wordmark-icon" width="16" height="34" viewBox="75 42 51 110" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="100" cy="66" r="19" stroke="currentColor" stroke-width="7"/><rect x="95.5" y="85" width="9" height="62" fill="currentColor"/><rect x="104.5" y="126" width="15" height="7" fill="currentColor"/><rect x="104.5" y="138" width="11" height="7" fill="currentColor"/></svg>Silver Key<span>·</span>Property</div>
     <ul class="nav-links">
-      <li><a href="#why">The Opportunity</a></li>
+      <li><a href="#benefits">The Model</a></li>
       <li><a href="#faq">FAQs</a></li>
     </ul>
   </nav>
 </header>
 
-<div class="announce">FREE BLUEPRINT: How UK Investors Earn Government-Backed Rental Income From Supported Housing</div>
+<div class="announce">Specialist Supported Housing - A smarter way to invest in property for long-term rental income</div>
 
 <main>
 
@@ -140,7 +198,7 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
               <div class="step-label">Step 1 of 4</div>
               <div class="quiz-q">How much do you currently have available to invest?</div>
               <div class="quiz-options" id="a-options-1">
-                <label class="quiz-option" data-value="under-50k"><input type="radio" name="a-capital" value="Under £50,000" /><div class="quiz-dot"></div><span class="quiz-option-text">Under £50,000</span></label>
+                <label class="quiz-option" data-value="under-50k"><input type="radio" name="a-capital" value="<£50,000" /><div class="quiz-dot"></div><span class="quiz-option-text"><£50,000</span></label>
                 <label class="quiz-option" data-value="50-100k"><input type="radio" name="a-capital" value="£50,000 – £100,000" /><div class="quiz-dot"></div><span class="quiz-option-text">£50,000 – £100,000</span></label>
                 <label class="quiz-option" data-value="100-250k"><input type="radio" name="a-capital" value="£100,000 – £250,000" /><div class="quiz-dot"></div><span class="quiz-option-text">£100,000 – £250,000</span></label>
                 <label class="quiz-option" data-value="250k-plus"><input type="radio" name="a-capital" value="£250,000+" /><div class="quiz-dot"></div><span class="quiz-option-text">£250,000+</span></label>
@@ -151,10 +209,10 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
           <!-- Soft disqualify -->
           <div class="quiz-step" id="a-step-dq">
             <div class="quiz-inner">
-              <div class="dq-icon">🙏</div>
-              <div class="quiz-q">This may not be the right fit just yet.</div>
-              <p class="dq-text">Our opportunities typically start from around £75,000. If you're not quite there yet, the blueprint is still worth grabbing — it'll show you exactly what to build toward so you're ready when the time comes.</p>
-              <button type="button" class="btn-primary submit-btn" id="a-btn-dq-anyway" style="width:100%;">Send me the blueprint anyway</button>
+              <div class="dq-icon">💡</div>
+              <div class="quiz-q">Here to learn? That's exactly what the blueprint is for.</div>
+              <p class="dq-text">Supported housing tends to involve larger amounts of capital, so where you're at will look different to the next person. The blueprint walks you through how the asset class actually works, so you're informed whenever the time is right for you.</p>
+              <button type="button" class="btn-primary submit-btn" id="a-btn-dq-anyway" style="width:100%;">Send me the free blueprint</button>
               <button type="button" class="btn-back" id="a-btn-back-dq">← Go back</button>
             </div>
           </div>
@@ -165,7 +223,7 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
               <div class="step-label">Step 2 of 4</div>
               <div class="quiz-q">What's your investment timeline?</div>
               <div class="quiz-options" id="a-options-2">
-                <label class="quiz-option" data-value="now"><input type="radio" name="a-timeline" value="Ready to invest now" /><div class="quiz-dot"></div><span class="quiz-option-text">Ready to invest now</span></label>
+                <label class="quiz-option" data-value="now"><input type="radio" name="a-timeline" value="Within the next 3 months" /><div class="quiz-dot"></div><span class="quiz-option-text">Within the next 3 months</span></label>
                 <label class="quiz-option" data-value="3-6"><input type="radio" name="a-timeline" value="3–6 months" /><div class="quiz-dot"></div><span class="quiz-option-text">3 – 6 months</span></label>
                 <label class="quiz-option" data-value="6-12"><input type="radio" name="a-timeline" value="6–12 months" /><div class="quiz-dot"></div><span class="quiz-option-text">6 – 12 months</span></label>
                 <label class="quiz-option" data-value="exploring"><input type="radio" name="a-timeline" value="Just exploring for now" /><div class="quiz-dot"></div><span class="quiz-option-text">Just exploring for now</span></label>
@@ -180,8 +238,8 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
               <div class="step-label">Step 3 of 4</div>
               <div class="quiz-q">What's your primary goal?</div>
               <div class="quiz-options" id="a-options-3">
-                <label class="quiz-option" data-value="income"><input type="radio" name="a-goal" value="Income today" /><div class="quiz-dot"></div><span class="quiz-option-text">Income today</span></label>
-                <label class="quiz-option" data-value="sipp"><input type="radio" name="a-goal" value="SIPP or SSAS allocation" /><div class="quiz-dot"></div><span class="quiz-option-text">SIPP or SSAS allocation</span></label>
+                <label class="quiz-option" data-value="income"><input type="radio" name="a-goal" value="Rental income" /><div class="quiz-dot"></div><span class="quiz-option-text">Rental income</span></label>
+                <label class="quiz-option" data-value="hands-off"><input type="radio" name="a-goal" value="A hands-off, headache-free investment" /><div class="quiz-dot"></div><span class="quiz-option-text">A hands-off, headache-free investment</span></label>
                 <label class="quiz-option" data-value="both"><input type="radio" name="a-goal" value="Both" /><div class="quiz-dot"></div><span class="quiz-option-text">Both</span></label>
               </div>
               <button type="button" class="btn-back" id="a-btn-back3">← Go back</button>
@@ -239,7 +297,7 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
   <section class="proof">
     <div class="wrap">
       <span class="eyebrow">The Gap This Fills</span>
-      <blockquote>There are an estimated <span class="hl">50,000+ adults</span> in England alone waiting for a suitable supported housing placement. Every home funded is one fewer person left in unsuitable, costlier institutional care.</blockquote>
+      <blockquote>The UK needs an estimated <span class="hl">167,329 additional supported housing units</span> by 2040 to meet demand for this asset class. Every home funded helps close that gap.</blockquote>
     </div>
   </section>
 
@@ -253,7 +311,7 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
       <div class="learn-list">
         <div class="learn-item">
           <div class="learn-num">01</div>
-          <div><h4>How lease terms and RPI uplifts are actually structured</h4><p>What "20–25 year, index-linked" really means in practice, and the clauses worth checking before you commit.</p></div>
+          <div><h4>How lease terms and RPI uplifts are actually structured</h4><p>What "20–25 year, index-linked" really means in practice, and the clauses worth checking.</p></div>
         </div>
         <div class="learn-item">
           <div class="learn-num">02</div>
@@ -261,7 +319,7 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
         </div>
         <div class="learn-item">
           <div class="learn-num">03</div>
-          <div><h4>A worked example of net yield after fees and voids</h4><p>A real unit-economics breakdown so you can see how a target yield is actually built up.</p></div>
+          <div><h4>The benefits you'll want to know about supported housing</h4><p>What the returns can look like, and the moving parts worth understanding before you look any further.</p></div>
         </div>
         <div class="learn-item">
           <div class="learn-num">04</div>
@@ -271,35 +329,50 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
     </div>
   </section>
 
-  <!-- EXAMPLE OPPORTUNITIES -->
-  <section id="examples">
+  <!-- KEY BENEFITS -->
+  <section id="benefits">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">Illustrative Example</span>
-        <h2>What a return actually looks like, unit by unit.</h2>
-        <p>Figures below reflect real supported housing unit economics, generalised here for illustration. The blueprint includes how these numbers are built up.</p>
+        <span class="eyebrow">Why Supported Housing</span>
+        <h2>Built around income, backed by real demand.</h2>
       </div>
-      <div class="unit-grid">
-        <div class="unit-card">
-          <div class="unit-tag">One bedroom apartment</div>
-          <h3>443 sq ft</h3>
-          <div class="unit-rows">
-            <div class="unit-row"><span>Purchase price</span><span class="tabular">£144,695</span></div>
-            <div class="unit-row"><span>Target annual income</span><span class="tabular">£16,640</span></div>
-            <div class="unit-row highlight"><span>Target net yield</span><span class="tabular">11.5%</span></div>
-          </div>
+      <div class="benefit-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="m9 16 2 2 4-4"/></svg></div>
+          <p class="benefit-text">25-year management agreement for long-term, predictable income</p>
         </div>
-        <div class="unit-card">
-          <div class="unit-tag">Two bedroom apartment</div>
-          <h3>537 sq ft</h3>
-          <div class="unit-rows">
-            <div class="unit-row"><span>Purchase price</span><span class="tabular">£162,500</span></div>
-            <div class="unit-row"><span>Target annual income</span><span class="tabular">£19,500</span></div>
-            <div class="unit-row highlight"><span>Target net yield</span><span class="tabular">12%</span></div>
-          </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg></div>
+          <p class="benefit-text">Own a tangible, income-generating asset that pays you monthly</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <p class="benefit-text">No management required &mdash; the property is run and tenants are managed on your behalf by an approved housing association</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+          <p class="benefit-text">Own a physical property with the opportunity to generate long-term rental income</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+          <p class="benefit-text">Annual rental increases of a minimum of +1%</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <p class="benefit-text">Long-term demand for quality homes</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></div>
+          <p class="benefit-text">Monthly rental income supported through government-facilitated payments</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></svg></div>
+          <p class="benefit-text">Socially responsible investment that helps people in need</p>
         </div>
       </div>
-      <p class="unit-disclaimer">Example units shown for illustration only; development name and location have been generalised and do not refer to a specific current opportunity. Actual availability, pricing and yields vary and are subject to change. This is not a solicitation to buy any specific unit.</p>
+      <div class="section-photo-strip">
+        <img src="images/why-supported-housing.jpg" alt="A supported housing investment consultant talking through the details with a client" loading="lazy" />
+      </div>
     </div>
   </section>
 
@@ -318,7 +391,7 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
           <ul>
             <li><span class="mark-yes">✓</span> Looking for income over 10+ years, not a quick flip</li>
             <li><span class="mark-yes">✓</span> Comfortable tying up capital in an illiquid, long-term asset</li>
-            <li><span class="mark-yes">✓</span> A sophisticated, high-net-worth, or SIPP/SSAS investor</li>
+            <li><span class="mark-yes">✓</span> Wanting a hands-off, headache-free investment with greater security than traditional investment classes</li>
             <li><span class="mark-yes">✓</span> Interested in a return backed by social need, not sentiment</li>
           </ul>
         </div>
@@ -330,6 +403,33 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
             <li><span class="mark-no">–</span> Uncomfortable with property-related risk and illiquidity</li>
             <li><span class="mark-no">–</span> Expecting guaranteed, risk-free returns (none exist here)</li>
           </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS (template placeholders — see caveat) -->
+  <section style="background: var(--card);">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Investor Stories</span>
+        <h2>What our investors say</h2>
+      </div>
+      <div class="testimonial-grid">
+        <div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-quote">"The whole process was refreshingly straightforward — no jargon, no pressure. The rent has landed on time every quarter since."</p>
+          <div class="t-person"><div class="t-avatar">RT</div><div><div class="t-name">Richard T.</div><div class="t-role">Investor, Surrey</div></div></div>
+        </div>
+        <div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-quote">"I'd looked at buy-to-let for years but void periods put me off. This felt different — the lease sits with the provider, not an individual tenant."</p>
+          <div class="t-person"><div class="t-avatar">AM</div><div><div class="t-name">Angela M.</div><div class="t-role">Investor, Leeds</div></div></div>
+        </div>
+        <div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-quote">"We used part of our SSAS allocation for this. The team walked us through the pension compliance side clearly, which mattered a lot to us."</p>
+          <div class="t-person"><div class="t-avatar">DK</div><div><div class="t-name">David & Priya K.</div><div class="t-role">Investors, Bristol</div></div></div>
         </div>
       </div>
     </div>
@@ -360,8 +460,12 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
           <p>No. Like most direct property investment, this is a long-term, illiquid commitment typically held for the lease term. It is not suitable for money you may need at short notice.</p>
         </details>
         <details class="faq-item">
-          <summary>Can I hold this in a pension?</summary>
-          <p>Some structures are compatible with SIPPs and SSASs. Eligibility depends on the specific property or fund structure. This is covered property-by-property in the blueprint.</p>
+          <summary>Is there a demand for these properties?</summary>
+          <p>Across the UK, demand continues to outpace supply. As more people require this type of accommodation, local authorities and housing providers continue to need more high-quality homes. The National Housing Federation estimates England will require an additional 167,329 supported housing units by 2040 — around a 33% increase on today's provision.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is this going to turn into a 'full-time job' for me?</summary>
+          <p>The properties are professionally managed through a long-term 25-year management agreement, meaning the day-to-day running is taken care of for you. Instead of being an active landlord, you simply own the property while benefiting from a long-term rental income structure. Keeping things simple and taking away the burden for the investor.</p>
         </details>
       </div>
     </div>
@@ -373,7 +477,7 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
       <div class="section-head">
         <span class="eyebrow" style="color:var(--accent);">Get Instant Access</span>
         <h2 style="color:var(--invert-ink);">Download Your Free Supported Housing Blueprint</h2>
-        <p style="color:var(--invert-ink-soft);">Tell us where to send it — takes less than 30 seconds.</p>
+        <p style="color:var(--invert-ink-soft);">Tell us where to send it. Takes less than 30 seconds.</p>
       </div>
 
       <div class="quiz-card" style="max-width:520px;margin:0 auto;">
@@ -384,7 +488,7 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
             <div class="step-label">Step 1 of 4</div>
             <div class="quiz-q">How much do you currently have available to invest?</div>
             <div class="quiz-options" id="b-options-1">
-              <label class="quiz-option" data-value="under-50k"><input type="radio" name="b-capital" value="Under £50,000" /><div class="quiz-dot"></div><span class="quiz-option-text">Under £50,000</span></label>
+              <label class="quiz-option" data-value="under-50k"><input type="radio" name="b-capital" value="<£50,000" /><div class="quiz-dot"></div><span class="quiz-option-text"><£50,000</span></label>
               <label class="quiz-option" data-value="50-100k"><input type="radio" name="b-capital" value="£50,000 – £100,000" /><div class="quiz-dot"></div><span class="quiz-option-text">£50,000 – £100,000</span></label>
               <label class="quiz-option" data-value="100-250k"><input type="radio" name="b-capital" value="£100,000 – £250,000" /><div class="quiz-dot"></div><span class="quiz-option-text">£100,000 – £250,000</span></label>
               <label class="quiz-option" data-value="250k-plus"><input type="radio" name="b-capital" value="£250,000+" /><div class="quiz-dot"></div><span class="quiz-option-text">£250,000+</span></label>
@@ -394,10 +498,10 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
 
         <div class="quiz-step" id="b-step-dq">
           <div class="quiz-inner">
-            <div class="dq-icon">🙏</div>
-            <div class="quiz-q">This may not be the right fit just yet.</div>
-            <p class="dq-text">Our opportunities typically start from around £75,000. If you're not quite there yet, the blueprint is still worth grabbing — it'll show you exactly what to build toward so you're ready when the time comes.</p>
-            <button type="button" class="btn-primary submit-btn" id="b-btn-dq-anyway" style="width:100%;">Send me the blueprint anyway</button>
+            <div class="dq-icon">💡</div>
+            <div class="quiz-q">Here to learn? That's exactly what the blueprint is for.</div>
+            <p class="dq-text">Supported housing tends to involve larger amounts of capital, so where you're at will look different to the next person. The blueprint walks you through how the asset class actually works, so you're informed whenever the time is right for you.</p>
+            <button type="button" class="btn-primary submit-btn" id="b-btn-dq-anyway" style="width:100%;">Send me the free blueprint</button>
             <button type="button" class="btn-back" id="b-btn-back-dq">← Go back</button>
           </div>
         </div>
@@ -407,7 +511,7 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
             <div class="step-label">Step 2 of 4</div>
             <div class="quiz-q">What's your investment timeline?</div>
             <div class="quiz-options" id="b-options-2">
-              <label class="quiz-option" data-value="now"><input type="radio" name="b-timeline" value="Ready to invest now" /><div class="quiz-dot"></div><span class="quiz-option-text">Ready to invest now</span></label>
+              <label class="quiz-option" data-value="now"><input type="radio" name="b-timeline" value="Within the next 3 months" /><div class="quiz-dot"></div><span class="quiz-option-text">Within the next 3 months</span></label>
               <label class="quiz-option" data-value="3-6"><input type="radio" name="b-timeline" value="3–6 months" /><div class="quiz-dot"></div><span class="quiz-option-text">3 – 6 months</span></label>
               <label class="quiz-option" data-value="6-12"><input type="radio" name="b-timeline" value="6–12 months" /><div class="quiz-dot"></div><span class="quiz-option-text">6 – 12 months</span></label>
               <label class="quiz-option" data-value="exploring"><input type="radio" name="b-timeline" value="Just exploring for now" /><div class="quiz-dot"></div><span class="quiz-option-text">Just exploring for now</span></label>
@@ -421,8 +525,8 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
             <div class="step-label">Step 3 of 4</div>
             <div class="quiz-q">What's your primary goal?</div>
             <div class="quiz-options" id="b-options-3">
-              <label class="quiz-option" data-value="income"><input type="radio" name="b-goal" value="Income today" /><div class="quiz-dot"></div><span class="quiz-option-text">Income today</span></label>
-              <label class="quiz-option" data-value="sipp"><input type="radio" name="b-goal" value="SIPP or SSAS allocation" /><div class="quiz-dot"></div><span class="quiz-option-text">SIPP or SSAS allocation</span></label>
+              <label class="quiz-option" data-value="income"><input type="radio" name="b-goal" value="Rental income" /><div class="quiz-dot"></div><span class="quiz-option-text">Rental income</span></label>
+              <label class="quiz-option" data-value="hands-off"><input type="radio" name="b-goal" value="A hands-off, headache-free investment" /><div class="quiz-dot"></div><span class="quiz-option-text">A hands-off, headache-free investment</span></label>
               <label class="quiz-option" data-value="both"><input type="radio" name="b-goal" value="Both" /><div class="quiz-dot"></div><span class="quiz-option-text">Both</span></label>
             </div>
             <button type="button" class="btn-back" id="b-btn-back3">← Go back</button>
@@ -469,34 +573,27 @@ src="https://www.facebook.com/tr?id=1413414506119281&ev=PageView&noscript=1"
     <div class="footer-top">
       <div class="footer-brand">
         <div class="wordmark"><svg class="wordmark-icon" width="16" height="34" viewBox="75 42 51 110" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="100" cy="66" r="19" stroke="currentColor" stroke-width="7"/><rect x="95.5" y="85" width="9" height="62" fill="currentColor"/><rect x="104.5" y="126" width="15" height="7" fill="currentColor"/><rect x="104.5" y="138" width="11" height="7" fill="currentColor"/></svg>Silver Key<span>·</span>Property</div>
-      
-      </div>
-      <div class="footer-cols">
-        <div class="footer-col">
-          <h4>Explore</h4>
-          <ul>
-            <li><a href="#why">The Opportunity</a></li>
-            <li><a href="#faq">FAQs</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-          </ul>
-        </div>
       </div>
     </div>
     <hr class="rule" />
-    <p class="disclaimer" style="margin-top:24px;">
-      <strong>Risk warning:</strong> 
-    </p>
+    <div class="disclaimer" style="margin-top:24px;">
+      <p>This website and the accompanying guide are provided for general information and educational purposes only, to help readers understand the supported housing sector as an asset class. Nothing here describes the terms of, or constitutes an offer, solicitation, invitation, or inducement to invest in, any specific property, scheme, or investment opportunity.</p>
+      <p>Nothing on this page or in the guide constitutes financial, legal, tax, or investment advice, and none of it should be relied on as such. Silver Key Property is not authorised or regulated by the Financial Conduct Authority to give investment advice, and nothing here is a personal recommendation.</p>
+      <p>If, after reading the guide, you want to explore a specific opportunity in this sector, you'll be directed to a separate process, completely independent of Silver Key Property. Any specific opportunity will only be presented following that separate process, and any related financial promotion will be issued or approved in line with section 21 of the Financial Services and Markets Act 2000.</p>
+      <p>Property investment of any kind carries risk. Property values can fall as well as rise, income is not guaranteed, and property is generally illiquid, it may be difficult to sell or exit quickly. Past performance, and any figures referenced generally in relation to this sector, are not a reliable indicator of future results. You should not invest money you cannot afford to lose, and should seek independent financial and legal advice before making any investment decision.</p>
+      <p>By submitting your details, you consent to being contacted about the free guide and related educational content.</p>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
   </div>
 </footer>
 
 <script>
+// Paste your GHL "Inbound Webhook" trigger URL here (Workflows > Add Trigger > Inbound Webhook).
 const GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/HEOut7IJQ2GxJIUq9qIb/webhook-trigger/6be855f0-003d-46a0-b83b-a2c65a978f74";
 
 function ukPhoneValid(raw) {
@@ -534,7 +631,7 @@ function initQuiz(cfg) {
   bindOptions(cfg.options1, function () {
     const val = document.querySelector('#' + cfg.options1 + ' input:checked')?.value;
     if (!val) return;
-    if (val === 'Under £50,000') { go(cap1, dq, null); } else { go(cap1, tl2, '50%'); }
+    if (val === '<£50,000') { go(cap1, dq, null); } else { go(cap1, tl2, '50%'); }
   });
   bindOptions(cfg.options2, function () {
     if (!document.querySelector('#' + cfg.options2 + ' input:checked')) return;
@@ -587,7 +684,7 @@ function initQuiz(cfg) {
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending...';
 
-    const capital = document.querySelector('#' + cfg.options1 + ' input:checked')?.value || 'Under £50,000';
+    const capital = document.querySelector('#' + cfg.options1 + ' input:checked')?.value || '<£50,000';
     const timeline = document.querySelector('#' + cfg.options2 + ' input:checked')?.value || '';
     const goal = document.querySelector('#' + cfg.options3 + ' input:checked')?.value || '';
     const eventId = 'lead_' + Date.now() + '_' + Math.random().toString(36).slice(2);
