@@ -50,9 +50,23 @@
   @media print {
     body { background: #ffffff; }
     .page { margin: 0; box-shadow: none; page-break-after: always; }
+    .no-print { display: none !important; }
   }
 
   .placeholder { color: #b45309; background: #fef3c7; padding: 1px 5px; border-radius: 3px; font-weight: 600; font-size: 0.92em; }
+
+  .download-bar {
+    position: fixed; top: 18px; right: 18px; z-index: 10;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .download-btn {
+    background: var(--accent); color: var(--accent-ink); border: none;
+    padding: 11px 20px; border-radius: 6px; font-family: var(--face);
+    font-size: 0.88rem; font-weight: 700; cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  }
+  .download-btn:hover { filter: brightness(1.08); }
+  .download-hint { font-size: 0.72rem; color: var(--ink-soft); background: #ffffff; padding: 4px 8px; border-radius: 4px; box-shadow: 0 1px 6px rgba(0,0,0,0.1); }
 
   /* Header */
   .doc-header { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 14px; border-bottom: 1px solid var(--line); margin-bottom: 26px; }
@@ -100,6 +114,11 @@
 </style>
 </head>
 <body>
+
+<div class="download-bar no-print">
+  <span class="download-hint">Use "Save as PDF" as the destination</span>
+  <button class="download-btn" onclick="window.print()">Download as PDF</button>
+</div>
 
 <!-- PAGE 1: RESERVATION FORM -->
 <div class="page">
