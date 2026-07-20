@@ -217,9 +217,8 @@ src="https://www.facebook.com/tr?id=2148765152722188&ev=PageView&noscript=1"
           <div class="quiz-step" id="a-step-dq">
             <div class="quiz-inner">
               <div class="dq-icon">💡</div>
-              <div class="quiz-q">Here to learn? That's exactly what the blueprint is for.</div>
-              <p class="dq-text">Supported housing tends to involve larger amounts of capital, so where you're at will look different to the next person. The blueprint walks you through how the asset class actually works, so you're informed whenever the time is right for you.</p>
-              <button type="button" class="btn-primary submit-btn" id="a-btn-dq-anyway" style="width:100%;">Send me the free blueprint</button>
+              <div class="quiz-q">This one's built for larger deployments of capital.</div>
+              <p class="dq-text">Supported housing opportunities typically start well above this range. If that's not where you're at right now, no problem, feel free to check back when the time's right.</p>
               <button type="button" class="btn-back" id="a-btn-back-dq">← Go back</button>
             </div>
           </div>
@@ -506,9 +505,8 @@ src="https://www.facebook.com/tr?id=2148765152722188&ev=PageView&noscript=1"
         <div class="quiz-step" id="b-step-dq">
           <div class="quiz-inner">
             <div class="dq-icon">💡</div>
-            <div class="quiz-q">Here to learn? That's exactly what the blueprint is for.</div>
-            <p class="dq-text">Supported housing tends to involve larger amounts of capital, so where you're at will look different to the next person. The blueprint walks you through how the asset class actually works, so you're informed whenever the time is right for you.</p>
-            <button type="button" class="btn-primary submit-btn" id="b-btn-dq-anyway" style="width:100%;">Send me the free blueprint</button>
+            <div class="quiz-q">This one's built for larger deployments of capital.</div>
+            <p class="dq-text">Supported housing opportunities typically start well above this range. If that's not where you're at right now, no problem, feel free to check back when the time's right.</p>
             <button type="button" class="btn-back" id="b-btn-back-dq">← Go back</button>
           </div>
         </div>
@@ -670,7 +668,6 @@ function initQuiz(cfg) {
     go(goal3, contact4, '100%');
   });
 
-  document.getElementById(cfg.btnDqAnyway).addEventListener('click', function () { go(dq, contact4, '100%'); });
   document.getElementById(cfg.btnBackDq).addEventListener('click', function () { dq.classList.remove('active'); cap1.classList.add('active'); progress.style.width = '25%'; });
   document.getElementById(cfg.btnBack2).addEventListener('click', function () { go(tl2, cap1, '25%'); });
   document.getElementById(cfg.btnBack3).addEventListener('click', function () { go(goal3, tl2, '50%'); });
@@ -756,7 +753,7 @@ function initQuiz(cfg) {
 initQuiz({
   step1: 'a-step-1', stepDq: 'a-step-dq', step2: 'a-step-2', step3: 'a-step-3', step4: 'a-step-4',
   options1: 'a-options-1', options2: 'a-options-2', options3: 'a-options-3',
-  btnDqAnyway: 'a-btn-dq-anyway', btnBackDq: 'a-btn-back-dq',
+  btnBackDq: 'a-btn-back-dq',
   btnBack2: 'a-btn-back2', btnBack3: 'a-btn-back3', btnBack4: 'a-btn-back4',
   progressId: 'progress-a', formId: 'heroGuideForm', errorId: 'heroFormError',
   hpId: 'a-hp', submitBtnId: 'a-btn-submit'
@@ -765,7 +762,7 @@ initQuiz({
 initQuiz({
   step1: 'b-step-1', stepDq: 'b-step-dq', step2: 'b-step-2', step3: 'b-step-3', step4: 'b-step-4',
   options1: 'b-options-1', options2: 'b-options-2', options3: 'b-options-3',
-  btnDqAnyway: 'b-btn-dq-anyway', btnBackDq: 'b-btn-back-dq',
+  btnBackDq: 'b-btn-back-dq',
   btnBack2: 'b-btn-back2', btnBack3: 'b-btn-back3', btnBack4: 'b-btn-back4',
   progressId: 'progress-b', formId: 'guideForm', errorId: 'formError',
   hpId: 'b-hp', submitBtnId: 'b-btn-submit'
