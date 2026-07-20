@@ -1,0 +1,298 @@
+<!--
+  Rebranded Reservation Agreement (from the Orlando Reid template, at their
+  request, per Dylan).
+
+  BEFORE THIS GOES ANYWHERE NEAR A REAL BUYER, fill in every [PLACEHOLDER]
+  below with Silver Key Property's actual details, and confirm the T&Cs on
+  page 2 have been reviewed by your solicitor for use under Silver Key's
+  name (the clauses are carried over from Orlando Reid's version and
+  reference things like "the Agent" / "the Seller" roles that should be
+  checked against how Silver Key actually operates in this partnership).
+
+  Placeholders to fill in:
+    - Company registration number
+    - Registered office address
+    - Phone / email
+    - Bank details (account holder, sort code, account number, IBAN, SWIFT/BIC)
+    - Accreditation/scheme logos (Property Ombudsman, Client Money Protect,
+      PRS, Prompt Payment Code, etc.) -- only include the ones Silver Key
+      Property is an actual verified member of.
+-->
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Reservation Agreement | Silver Key Property</title>
+<style>
+  :root {
+    --ink: #0a0a0a;
+    --ink-soft: #57595c;
+    --line: #e3e3e0;
+    --card: #f7f7f5;
+    --accent: #1652f0;
+    --accent-ink: #ffffff;
+    --face: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #e9e9e7; }
+  body { font-family: var(--face); color: var(--ink); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+  h1, h2 { font-family: var(--face); font-weight: 800; letter-spacing: -0.02em; margin: 0; color: var(--ink); }
+  p { margin: 0; }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 20px auto;
+    background: #ffffff;
+    padding: 16mm 18mm;
+  }
+  @media print {
+    body { background: #ffffff; }
+    .page { margin: 0; box-shadow: none; page-break-after: always; }
+  }
+
+  .placeholder { color: #b45309; background: #fef3c7; padding: 1px 5px; border-radius: 3px; font-weight: 600; font-size: 0.92em; }
+
+  /* Header */
+  .doc-header { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 14px; border-bottom: 1px solid var(--line); margin-bottom: 26px; }
+  .wordmark { display: inline-flex; align-items: center; gap: 7px; font-weight: 800; font-size: 1.05rem; letter-spacing: -0.01em; }
+  .wordmark span { color: var(--accent); }
+  .wordmark-icon { flex-shrink: 0; color: var(--ink); }
+  .doc-header .head-office { text-align: right; font-size: 0.76rem; color: var(--ink-soft); line-height: 1.5; }
+  .doc-header .head-office strong { display: block; color: var(--ink); font-size: 0.78rem; margin-bottom: 2px; }
+
+  h1.doc-title { font-size: 2.1rem; margin: 0 0 24px; }
+
+  /* Form grid */
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
+  .f-field { margin-bottom: 15px; }
+  .f-field label { display: block; font-size: 0.76rem; font-weight: 700; margin-bottom: 3px; }
+  .f-field label .hint { font-weight: 500; color: var(--ink-soft); }
+  .f-line { border-bottom: 1px solid var(--line); height: 20px; }
+  .f-box { border: 1px solid var(--line); height: 60px; }
+  .f-row { display: flex; gap: 20px; }
+  .f-row .f-field { flex: 1; }
+  .f-check { display: inline-block; width: 14px; height: 14px; border: 1px solid var(--ink); vertical-align: middle; margin-left: 6px; }
+
+  .section-label { color: var(--accent); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin: 6px 0 8px; }
+
+  .doc-footer { margin-top: 36px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 0.76rem; color: var(--ink-soft); display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; }
+  .doc-footer .contact div { margin-bottom: 3px; }
+  .doc-footer .contact b { color: var(--ink); }
+  .accreditation-note { border: 1px dashed #cbd5e1; border-radius: 6px; padding: 10px 14px; font-size: 0.74rem; color: var(--ink-soft); max-width: 320px; }
+
+  /* Terms page */
+  .terms-grid { column-count: 2; column-gap: 32px; font-size: 0.82rem; }
+  .terms-grid h3 { font-size: 0.86rem; margin: 14px 0 6px; break-after: avoid; }
+  .terms-grid h3:first-child { margin-top: 0; }
+  .terms-grid ol { margin: 0 0 4px; padding-left: 18px; }
+  .terms-grid li { margin-bottom: 9px; }
+
+  .bank-details { margin-top: 24px; font-size: 0.84rem; }
+  .bank-details h3 { font-size: 0.86rem; margin: 0 0 8px; }
+  .bank-details .row { display: flex; gap: 8px; margin-bottom: 4px; }
+  .bank-details .row .k { width: 130px; color: var(--ink-soft); }
+
+  .sign-block { margin-top: 30px; display: flex; gap: 60px; }
+  .sign-block div { flex: 1; }
+  .sign-block .f-line { margin-top: 24px; }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: RESERVATION FORM -->
+<div class="page">
+  <div class="doc-header">
+    <div class="wordmark">
+      <svg class="wordmark-icon" width="15" height="32" viewBox="75 42 51 110" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="100" cy="66" r="19" stroke="currentColor" stroke-width="7"/><rect x="95.5" y="85" width="9" height="62" fill="currentColor"/><rect x="104.5" y="126" width="15" height="7" fill="currentColor"/><rect x="104.5" y="138" width="11" height="7" fill="currentColor"/></svg>
+      Silver Key<span> · </span>Property
+    </div>
+    <div class="head-office">
+      <strong>Head Office</strong>
+      Registration number: <span class="placeholder">[COMPANY REG. NO.]</span><br />
+      <span class="placeholder">[REGISTERED ADDRESS LINE 1]</span><br />
+      <span class="placeholder">[REGISTERED ADDRESS LINE 2]</span><br />
+      <span class="placeholder">[POSTCODE]</span>
+    </div>
+  </div>
+
+  <h1 class="doc-title">Reservation agreement</h1>
+
+  <div class="form-grid">
+    <!-- Buyer 1 -->
+    <div>
+      <div class="f-row">
+        <div class="f-field"><label>Title <span class="hint">(Mr/Mrs/Miss/Ms/Dr)</span></label><div class="f-line"></div></div>
+      </div>
+      <div class="f-field"><label>Name</label><div class="f-line"></div></div>
+      <div class="f-field"><label>Address</label><div class="f-box"></div></div>
+      <div class="f-row">
+        <div class="f-field"><label>Phone</label><div class="f-line"></div></div>
+        <div class="f-field"><label>Mobile</label><div class="f-line"></div></div>
+      </div>
+      <div class="f-field"><label>Email</label><div class="f-line"></div></div>
+      <div class="f-row">
+        <div class="f-field"><label>Date of birth</label><div class="f-line"></div></div>
+        <div class="f-field"><label>Citizenship</label><div class="f-line"></div></div>
+      </div>
+      <div class="f-field"><label>Solicitors details</label><div class="f-box"></div></div>
+      <div class="f-field"><label>Country of purchase</label><div class="f-line"></div></div>
+      <div class="f-field"><label>Development of purchase</label><div class="f-line"></div></div>
+      <div class="f-field"><label>Partner company / Developer / Builder name</label><div class="f-box"></div></div>
+      <div class="f-field"><label>Number of units purchasing</label><div class="f-line"></div></div>
+      <div class="f-field"><label>Unit number(s)</label><div class="f-line"></div></div>
+      <div class="f-field"><label>Number of parking spaces</label><div class="f-line"></div></div>
+      <div class="f-field"><label>Comments &amp; conditions</label><div class="f-box"></div></div>
+    </div>
+
+    <!-- Buyer 2 -->
+    <div>
+      <div class="f-row">
+        <div class="f-field"><label>Title <span class="hint">(Mr/Mrs/Miss/Ms/Dr)</span></label><div class="f-line"></div></div>
+      </div>
+      <div class="f-field"><label>Second name <span class="hint">(if applicable)</span></label><div class="f-line"></div></div>
+      <div class="f-field"><label>Address</label><div class="f-box"></div></div>
+      <div class="f-row">
+        <div class="f-field"><label>Phone</label><div class="f-line"></div></div>
+        <div class="f-field"><label>Mobile</label><div class="f-line"></div></div>
+      </div>
+      <div class="f-field"><label>Email</label><div class="f-line"></div></div>
+      <div class="f-row">
+        <div class="f-field"><label>Date of birth</label><div class="f-line"></div></div>
+        <div class="f-field"><label>Citizenship</label><div class="f-line"></div></div>
+      </div>
+      <div class="f-field"><label>Country of issue</label><div class="f-line"></div></div>
+      <div class="f-row">
+        <div class="f-field"><label>Issue date</label><div class="f-line"></div></div>
+        <div class="f-field"><label>Expiry date</label><div class="f-line"></div></div>
+      </div>
+      <div class="f-field"><label>Property price</label><div class="f-line"></div></div>
+      <div class="f-field"><label>Furniture pack(s)*</label><div class="f-line"></div></div>
+      <div class="f-field"><label>Parking</label><div class="f-line"></div></div>
+      <div class="f-field"><label>Total purchase price</label><div class="f-line"></div></div>
+
+      <div class="section-label">Payment plan</div>
+      <div class="f-field"><label>On reservation</label><div class="f-line"></div></div>
+      <div class="f-field"><label>On contract</label><div class="f-line"></div></div>
+      <div class="f-field"><label>Stage payments</label><div class="f-line"></div></div>
+      <div class="f-field"><label>On completion</label><div class="f-line"></div></div>
+      <div class="f-field"><label>Mortgage required <span class="f-check"></span></label></div>
+
+      <p style="font-size: 0.7rem; color: var(--ink-soft); margin-top: 10px;">*Furniture pack price is not included in any assured rental yield calculations.</p>
+    </div>
+  </div>
+
+  <div class="doc-footer">
+    <div class="contact">
+      <div><b>Telephone:</b> <span class="placeholder">[PHONE NUMBER]</span></div>
+      <div><b>Email:</b> <span class="placeholder">[EMAIL ADDRESS]</span></div>
+      <div><b>Website:</b> silverkeyproperty.co.uk</div>
+    </div>
+    <div class="accreditation-note">
+      [Accreditation / redress scheme logos go here &mdash; e.g. The Property Ombudsman, Client Money Protect, PRS &mdash; include only schemes Silver Key Property is an actual verified member of.]
+    </div>
+  </div>
+  <p style="font-size: 0.7rem; color: var(--ink-soft); margin-top: 14px;">
+    Silver Key Property is a company registered in England and Wales. Registration number: <span class="placeholder">[COMPANY REG. NO.]</span>.
+    Registered address: <span class="placeholder">[REGISTERED ADDRESS]</span>.
+  </p>
+</div>
+
+<!-- PAGE 2: TERMS AND CONDITIONS -->
+<div class="page">
+  <div class="doc-header">
+    <div class="wordmark">
+      <svg class="wordmark-icon" width="15" height="32" viewBox="75 42 51 110" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="100" cy="66" r="19" stroke="currentColor" stroke-width="7"/><rect x="95.5" y="85" width="9" height="62" fill="currentColor"/><rect x="104.5" y="126" width="15" height="7" fill="currentColor"/><rect x="104.5" y="138" width="11" height="7" fill="currentColor"/></svg>
+      Silver Key<span> · </span>Property
+    </div>
+    <div class="head-office">
+      <strong>Head Office</strong>
+      Registration number: <span class="placeholder">[COMPANY REG. NO.]</span><br />
+      <span class="placeholder">[REGISTERED ADDRESS LINE 1]</span><br />
+      <span class="placeholder">[REGISTERED ADDRESS LINE 2]</span><br />
+      <span class="placeholder">[POSTCODE]</span>
+    </div>
+  </div>
+
+  <h1 class="doc-title">Terms and conditions</h1>
+
+  <div class="terms-grid">
+    <h3>Definitions</h3>
+    <ol start="1">
+      <li>In this Reservation Form capitalised terms shall have the meanings set out below or in the form above.</li>
+    </ol>
+
+    <h3>Basis of agreement</h3>
+    <ol start="2">
+      <li>This Reservation Form including these Terms and Conditions (the Reservation Agreement) is made between the Buyer and the Seller, acting through Silver Key Property or any authorised agent of Silver Key Property (the Agent).</li>
+      <li>The Agent has been authorised by the Seller to enter into this Reservation Agreement and receive the Reservation Deposit on its behalf.</li>
+      <li>By entering into this Reservation Agreement, the Agent confirms that the Seller is interested in selling the Reserved Property to the Buyer and the Buyer confirms that he/she is interested in purchasing the Reserved Property from the Seller.</li>
+      <li>The Buyer warrants and represents that all information provided by him/her in this Reservation Agreement is true and accurate in all respects.</li>
+    </ol>
+
+    <h3>Legal and financial advice</h3>
+    <ol start="6">
+      <li>By signing this Reservation Agreement the Buyer acknowledges and agrees that:
+        <ol type="a">
+          <li>he/she has been given every opportunity to raise enquiries or questions in relation to the Reserved Property, the development and all plans relating to the same;</li>
+          <li>he/she has had the opportunity to take legal and financial advice in relation to this Reservation Agreement and will take legal and financial advice in relation to his/her purchase of the Reserved Property before Exchange of Contracts (as defined below) and will rely on such legal and financial advice;</li>
+          <li>any information, marketing material and/or representations provided by the Seller or the Agent are for guidance only and are not contractually binding and they shall in no way replace the Buyer's responsibility to seek legal and financial advice and carry out its own due diligence and in respect of the purchase of the Reserved Property.</li>
+        </ol>
+      </li>
+      <li>The Agent may recommend a panel of independent solicitors from which the Buyer may appoint a firm to advise him/her on the purchase of the Reserved Property. The Buyer is in no way obligated to use a firm from that panel, nor will the Agent be in any way responsible for the Buyer's decision to use any firm on that panel or any advice which the Buyer receives.</li>
+    </ol>
+
+    <h3>Reservation of the property</h3>
+    <ol start="8">
+      <li>In consideration of the payment of the Reservation Deposit by the Buyer to the Seller, the Seller agrees not to sell the Reserved Property to any other person during the Reservation Period (as defined below) and shall instruct its solicitors to issue the relevant documentation for the sale of the Reserved Property to the Buyer.</li>
+      <li>The Reservation Period means a period of 28 days from the date of entering into this Reservation Agreement and paying the Reservation Deposit, provided that if the Reserved Property is subject to any planning approval at the date of entering into this Reservation Agreement, the Reservation Period shall mean a period of 14 days from date of the grant of planning approval. In either case, the Buyer shall finalise Exchange of Contracts (as defined below) in respect of the Reserved Property with the Seller within the Reservation Period.</li>
+      <li>The Reserved Property will not be reserved unless and until the Reservation Deposit is paid in full, cleared funds by the Buyer.</li>
+    </ol>
+
+    <h3>Exchange</h3>
+    <ol start="11">
+      <li>In the event that during the Reservation Period there is a legal exchange of an agreement for sale of the Reserved Property (Contract) made between the Buyer and the Seller for the Purchase Price (Exchange of Contracts) and the Buyer has paid the Reservation Deposit then the Reservation Deposit shall be treated as a part payment of the Purchase Price due under that Contract.</li>
+      <li>In the event that for whatever reason Exchange of Contracts to purchase the Reserved Property does not occur between the Seller and the Buyer within the Reservation Period then the Reservation Deposit shall be forfeited and no refund of the same shall be made to the Buyer and shall belong absolutely to the Seller.</li>
+      <li>Completion of the sale of the Reserved Property (including payment of the Purchase Price) will be made by the Buyer in accordance with the Contract for sale of the Reserved Property.</li>
+    </ol>
+
+    <h3>Mortgages</h3>
+    <ol start="14">
+      <li>The Buyer must have the ability to complete the Purchase with cash or funds not dependant on mortgaging the Reserved Property. The future availability of mortgages or changes in lending criteria cannot be predicted and therefore mortgages cannot be relied on. If in any doubt advice should be taken from an independent financial advisor.</li>
+    </ol>
+
+    <h3>General</h3>
+    <ol start="15">
+      <li>The Buyer shall bear all exchange rate differences and/or bank charges, including credit card transaction charges, as applicable, in connection with the purchase of the Reserved Property.</li>
+      <li>The Buyer may not assign or transfer any or all of his/her rights or obligations hereunder without the prior written agreement of the Seller.</li>
+      <li>This Reservation Agreement contains the entire agreement between the parties relating to the Reserved Property and supersedes any prior representations, warranties, agreements, understandings, negotiations, correspondence, or sales and marketing information. This Reservation Agreement does not constitute a legally binding contract to sell or purchase the Reserved Property by either the Seller or the Buyer, which is subject to the Contract.</li>
+      <li>This Reservation Agreement shall be governed by the laws of England and Wales.</li>
+    </ol>
+
+    <h3>Disclaimer</h3>
+    <ol start="19">
+      <li>Neither the Agent nor any of its officers, directors, employees, representatives, servants or agents will have any obligations or liability whatsoever to the Buyer, or any third party arising out of or in connection with this Reservation Agreement or the transaction contemplated herein, save in the event of fraud arising from any breach of this Reservation Agreement shall be deemed to exclude or limit liability for anything which cannot be excluded or limited by law.</li>
+      <li>Notwithstanding the generality of clause 19, neither the Seller or the Agent shall be liable to the Buyer for any: (i) indirect, incidental, special or consequential liability; (ii) loss of profits, business, opportunity, investment, anticipated savings, goodwill or contracts; (iii) failure by the Agent to take proper legal or financial advice or for any advice so taken by the Buyer; or (iv) failure by the Seller to enter into a Contract or return the Reservation Deposit due to any breach by the Buyer of this Reservation Agreement. The Seller's and the Agent's entire liability to the Buyer under this Reservation Agreement shall not exceed the sum of the Reservation Deposit.</li>
+    </ol>
+
+    <p style="font-size: 0.8rem; margin-top: 4px;">By signing this Reservation Agreement the Buyer acknowledges and agrees that he/she has read and understood this Reservation Agreement and has had the opportunity to seek legal and financial advice regarding his/her obligations hereunder and the implications of entering into this Reservation Agreement. Upon signing this agreement, Silver Key Property will be copied in to all communication between the buyer and their solicitor in relation to this purchase, unless otherwise stated by the buyer. This Reservation Agreement shall be binding on the date of signature by the Buyer.</p>
+  </div>
+
+  <div class="bank-details">
+    <h3>Bank details</h3>
+    <div class="row"><div class="k">Account holder name</div><div class="placeholder">[ACCOUNT HOLDER NAME]</div></div>
+    <div class="row"><div class="k">Sort code</div><div class="placeholder">[SORT CODE]</div></div>
+    <div class="row"><div class="k">Account</div><div class="placeholder">[ACCOUNT NUMBER]</div></div>
+    <div class="row"><div class="k">IBAN</div><div class="placeholder">[IBAN]</div></div>
+    <div class="row"><div class="k">SWIFT/BIC</div><div class="placeholder">[SWIFT/BIC]</div></div>
+  </div>
+
+  <div class="sign-block">
+    <div><label style="font-weight:700;">Signed</label><div class="f-line"></div></div>
+    <div><label style="font-weight:700;">Date</label><div class="f-line"></div></div>
+  </div>
+</div>
+
+</body>
+</html>
