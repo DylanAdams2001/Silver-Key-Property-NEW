@@ -274,7 +274,7 @@ src="https://www.facebook.com/tr?id=2148765152722188&ev=PageView&noscript=1"
                 </div>
                 <div class="field">
                   <label for="a-phone">Phone number</label>
-                  <input type="tel" id="a-phone" name="phone" placeholder="07123 456789" required />
+                  <input type="tel" id="a-phone" name="phone" required />
                 </div>
                 <button type="submit" class="submit-btn" id="a-btn-submit">Send me the free blueprint</button>
                 <div class="form-note">🔒 Your details are private. No spam, ever.</div>
@@ -560,7 +560,7 @@ src="https://www.facebook.com/tr?id=2148765152722188&ev=PageView&noscript=1"
               </div>
               <div class="field">
                 <label for="b-phone">Phone number</label>
-                <input type="tel" id="b-phone" name="phone" placeholder="07123 456789" required />
+                <input type="tel" id="b-phone" name="phone" required />
               </div>
               <button type="submit" class="submit-btn" id="b-btn-submit">Send me the free blueprint</button>
               <div class="form-note">🔒 Your details are private. No spam, ever.</div>
@@ -624,6 +624,7 @@ const phoneInputs = {};
       initialCountry: 'auto',
       geoIpLookup: geoIpLookup,
       separateDialCode: true,
+      autoPlaceholder: 'polite',
     });
   }
 });
