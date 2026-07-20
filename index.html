@@ -9,6 +9,13 @@
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
 <link rel="stylesheet" href="styles.css" />
+<!-- International phone input: flag dropdown, format-as-you-type, IP-based
+     country auto-detect, and proper per-country length validation. -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.8.0/build/css/intlTelInput.css" />
+<style>
+  .iti { width: 100%; display: block; }
+  .iti input { width: 100%; }
+</style>
 <!-- Meta Pixel -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -592,14 +599,34 @@ src="https://www.facebook.com/tr?id=2148765152722188&ev=PageView&noscript=1"
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.8.0/build/js/intlTelInputWithUtils.min.js"></script>
 <script>
 // Paste your GHL "Inbound Webhook" trigger URL here (Workflows > Add Trigger > Inbound Webhook).
 const GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/HEOut7IJQ2GxJIUq9qIb/webhook-trigger/6be855f0-003d-46a0-b83b-a2c65a978f74";
 
-function ukPhoneValid(raw) {
-  const stripped = raw.replace(/[\s\-().]/g, '');
-  return /^(?:\+44|0)\d{9,10}$/.test(stripped);
+// International phone input: auto-detects the visitor's country from their
+// IP (falls back to GB if the lookup fails/is blocked), formats as they
+// type in that country's convention, and validates via the same library
+// Google uses (libphonenumber) so length/format checks are correct per
+// country rather than the old UK-only regex.
+function geoIpLookup(callback) {
+  fetch('https://ipapi.co/json')
+    .then(function (res) { return res.json(); })
+    .then(function (data) { callback((data && data.country_code) || 'gb'); })
+    .catch(function () { callback('gb'); });
 }
+
+const phoneInputs = {};
+['a-phone', 'b-phone'].forEach(function (id) {
+  const el = document.getElementById(id);
+  if (el && window.intlTelInput) {
+    phoneInputs[id] = window.intlTelInput(el, {
+      initialCountry: 'auto',
+      geoIpLookup: geoIpLookup,
+      separateDialCode: true,
+    });
+  }
+});
 
 function initQuiz(cfg) {
   const cap1 = document.getElementById(cfg.step1);
@@ -675,10 +702,14 @@ function initQuiz(cfg) {
     emailEl.classList.toggle('error', !emailOk);
     if (!emailOk) valid = false;
     const phoneEl = form.querySelector('input[name="phone"]');
-    const phoneOk = ukPhoneValid(phone);
+    const phoneIti = phoneInputs[phoneEl.id];
+    const phoneOk = !!(phoneIti && phoneIti.isValidNumber());
     phoneEl.classList.toggle('error', !phoneOk);
     if (!phoneOk) valid = false;
     if (!valid) return;
+
+    // E.164 format (e.g. +447123456789) regardless of how the visitor typed it.
+    const phoneFormatted = phoneIti.getNumber();
 
     errorBox.classList.remove('show');
     submitBtn.disabled = true;
@@ -697,7 +728,7 @@ function initQuiz(cfg) {
           first_name: fname,
           last_name: lname,
           email: email,
-          phone: phone,
+          phone: phoneFormatted,
           investable_amount: capital,
           investment_timeline: timeline,
           investment_goal: goal,
