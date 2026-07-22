@@ -587,9 +587,10 @@ document.getElementById('submitBtn').addEventListener('click', function () {
     })
   }).then(function (response) {
     if (!response.ok) throw new Error('Webhook responded with an error');
-    if (typeof fbq === 'function') {
-      fbq('track', 'Lead', {}, { eventID: eventId });
-    }
+    // Lead event is sent server-side via GHL's Conversions API automation,
+    // not from the browser -- avoids the double-counted Lead events we saw
+    // in Ads Manager from having both a client pixel and server CAPI event
+    // with no way to dedupe them. PageView (in <head>) is unaffected.
     goToStep(5);
     setTimeout(function () { window.location.href = 'booking.html'; }, 1800);
   }).catch(function () {
