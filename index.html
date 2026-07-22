@@ -559,12 +559,12 @@ document.getElementById('submitBtn').addEventListener('click', function () {
 
   // Meta CAPI match-quality signals, so GHL's server-side event can be
   // deduplicated against (and matched as well as) this browser-side one.
-  // fbc: built from the fbclid URL param if the _fbc cookie isn't set yet.
+  // fbclid: the raw click-id URL param, for GHL's native FBCLID field.
+  // fbc: Meta's formatted version (fb.1.<timestamp>.<fbclid>), sent as a
+  // fallback in case a mapping ever needs the pre-built string instead.
+  const fbclid = new URLSearchParams(window.location.search).get('fbclid') || '';
   let fbc = getCookie('_fbc');
-  if (!fbc) {
-    const fbclid = new URLSearchParams(window.location.search).get('fbclid');
-    if (fbclid) fbc = 'fb.1.' + Date.now() + '.' + fbclid;
-  }
+  if (!fbc && fbclid) fbc = 'fb.1.' + Date.now() + '.' + fbclid;
   const fbp = getCookie('_fbp');
 
   fetch(GHL_WEBHOOK_URL, {
@@ -580,6 +580,7 @@ document.getElementById('submitBtn').addEventListener('click', function () {
       investment_goal: fd.goal || '',
       source: 'Supported Housing Funnel Page',
       event_id: eventId,
+      fbclid: fbclid,
       fbp: fbp,
       fbc: fbc,
       user_agent: navigator.userAgent
