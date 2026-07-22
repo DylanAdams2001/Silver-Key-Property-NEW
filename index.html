@@ -469,6 +469,11 @@ src="https://www.facebook.com/tr?id=2148765152722188&ev=PageView&noscript=1"
 // Paste your GHL "Inbound Webhook" trigger URL here (Workflows > Add Trigger > Inbound Webhook).
 const GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/HEOut7IJQ2GxJIUq9qIb/webhook-trigger/6be855f0-003d-46a0-b83b-a2c65a978f74";
 
+function getCookie(name) {
+  const match = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
+  return match ? decodeURIComponent(match[1]) : '';
+}
+
 function geoIpLookup(callback) {
   fetch("https://ipapi.co/json")
     .then(function (res) { return res.json(); })
@@ -552,6 +557,16 @@ document.getElementById('submitBtn').addEventListener('click', function () {
 
   const eventId = 'lead_' + Date.now() + '_' + Math.random().toString(36).slice(2);
 
+  // Meta CAPI match-quality signals, so GHL's server-side event can be
+  // deduplicated against (and matched as well as) this browser-side one.
+  // fbc: built from the fbclid URL param if the _fbc cookie isn't set yet.
+  let fbc = getCookie('_fbc');
+  if (!fbc) {
+    const fbclid = new URLSearchParams(window.location.search).get('fbclid');
+    if (fbclid) fbc = 'fb.1.' + Date.now() + '.' + fbclid;
+  }
+  const fbp = getCookie('_fbp');
+
   fetch(GHL_WEBHOOK_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -564,7 +579,10 @@ document.getElementById('submitBtn').addEventListener('click', function () {
       investment_timeline: fd.timeline || '',
       investment_goal: fd.goal || '',
       source: 'Supported Housing Funnel Page',
-      event_id: eventId
+      event_id: eventId,
+      fbp: fbp,
+      fbc: fbc,
+      user_agent: navigator.userAgent
     })
   }).then(function (response) {
     if (!response.ok) throw new Error('Webhook responded with an error');
