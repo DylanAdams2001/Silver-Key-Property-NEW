@@ -201,6 +201,13 @@
   .case-study p { font-size: 0.9rem; color: var(--ink-soft); margin-bottom: 0; }
   .case-study-note { border: 1px dashed #cbd5e1; border-radius: 8px; padding: 14px 16px; font-size: 0.8rem; color: var(--ink-soft); margin-top: 4px; }
 
+  table.data-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 20px 0; font-size: 0.85rem; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); }
+  table.data-table th, table.data-table td { padding: 12px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+  table.data-table tr:last-child td { border-bottom: none; }
+  table.data-table th { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 800; color: var(--ink-soft); background: var(--card); }
+  table.data-table td.property-cell { font-weight: 700; }
+  table.data-table td.yield-cell { color: var(--accent); font-weight: 800; }
+
   @media print {
     body { background: #fff; }
     .page { box-shadow: none; margin: 0; page-break-after: always; }
@@ -239,7 +246,7 @@
     <li><span class="num">04</span> Supported Housing vs Traditional Buy-to-Let</li>
     <li><span class="num">05</span> Understanding Your Rental Income</li>
     <li><span class="num">06</span> What's Managed For You, And What Isn't</li>
-    <li><span class="num">07</span> Case Studies</li>
+    <li><span class="num">07</span> Example Opportunities</li>
     <li><span class="num">08</span> Exit Options And Flexibility</li>
     <li><span class="num">09</span> Is This The Right Investment For You?</li>
     <li><span class="num">10</span> Risks, Questions And Next Steps</li>
@@ -414,33 +421,40 @@
   <div class="page-num">09</div>
 </div>
 
-<!-- PAGE 10: SECTION 07 -- CASE STUDIES -->
+<!-- PAGE 10: SECTION 07 -- EXAMPLE OPPORTUNITIES -->
 <div class="page">
   <span class="eyebrow">07 &nbsp;·&nbsp; Proof, Not Just Promises</span>
-  <h2 class="section-title">Case Studies</h2>
-  <p class="section-sub">Real examples of how this has played out for investors like you.</p>
+  <h2 class="section-title">Example Opportunities</h2>
+  <p class="section-sub">What recent supported housing opportunities have looked like in practice.</p>
 
-  <div class="case-study">
-    <h3><span class="placeholder">[CASE STUDY 1 TITLE, e.g. property type / location]</span></h3>
-    <div class="meta">
-      <span>Purchase price: <span class="placeholder">[£XXX,XXX]</span></span>
-      <span>Target yield: <span class="placeholder">[XX%]</span></span>
-      <span>Time to completion: <span class="placeholder">[X weeks]</span></span>
-    </div>
-    <p><span class="placeholder">[Short narrative: who the investor was (anonymised if needed), what they were looking for, why they chose this property, and how it's performed since completion. 3-4 sentences.]</span></p>
-  </div>
+  <table class="data-table">
+    <tr>
+      <th>Property</th>
+      <th>Bedrooms</th>
+      <th>Size</th>
+      <th>Price</th>
+      <th>Annual Income</th>
+      <th>Net Yield</th>
+    </tr>
+    <tr>
+      <td class="property-cell">Apartment 2, Shirley Pool Court</td>
+      <td>One bedroom</td>
+      <td>443 sq ft</td>
+      <td>£144,695</td>
+      <td>£16,640</td>
+      <td class="yield-cell">11.5%</td>
+    </tr>
+    <tr>
+      <td class="property-cell">Apartment 7, Shirley Pool Court</td>
+      <td>Two bedroom</td>
+      <td>537 sq ft</td>
+      <td>£162,500</td>
+      <td>£19,500</td>
+      <td class="yield-cell">12%</td>
+    </tr>
+  </table>
 
-  <div class="case-study">
-    <h3><span class="placeholder">[CASE STUDY 2 TITLE, e.g. property type / location]</span></h3>
-    <div class="meta">
-      <span>Purchase price: <span class="placeholder">[£XXX,XXX]</span></span>
-      <span>Target yield: <span class="placeholder">[XX%]</span></span>
-      <span>Time to completion: <span class="placeholder">[X weeks]</span></span>
-    </div>
-    <p><span class="placeholder">[Short narrative: who the investor was (anonymised if needed), what they were looking for, why they chose this property, and how it's performed since completion. 3-4 sentences.]</span></p>
-  </div>
-
-  <div class="case-study-note">This section is a placeholder. Send over the real details (property type, location, price, yield, timeline, and a short narrative for each) and they'll be dropped straight in. Worth confirming with a solicitor which figures are safe to publish and whether anonymisation or investor sign-off is needed before this goes out, since named outcome figures in an investment document are the part regulators scrutinise most closely.</div>
+  <div class="case-study-note">Figures shown reflect real supported housing unit economics at the time of writing. Availability, pricing and yields vary by unit and are subject to change, individual units may no longer be available. This is illustrative only and is not a solicitation to buy any specific unit.</div>
   <div class="page-num">10</div>
 </div>
 
@@ -528,7 +542,7 @@
   <div class="disclaimer-box" style="margin-top: 20px; border-top: none; padding-top: 0; font-size: 0.78rem;">
     <p>This website and the accompanying guide are provided for general information and educational purposes only, to help readers understand the supported housing sector as an asset class. Nothing here describes the terms of, or constitutes an offer, solicitation, invitation, or inducement to invest in, any specific property, scheme, or investment opportunity.</p>
     <p>Nothing on this page or in the guide constitutes financial, legal, tax, or investment advice, and none of it should be relied on as such. Silver Key Property is not authorised or regulated by the Financial Conduct Authority to give investment advice, and nothing here is a personal recommendation.</p>
-    <p>Case studies referenced in this guide, once populated, describe specific past transactions for illustrative purposes only. They are not representative of typical results, are not a guarantee of future performance, and should not be relied upon as an indication of what any individual investor might achieve.</p>
+    <p>Example opportunities referenced in this guide are shown for illustrative purposes only, do not refer to a specific current opportunity unless stated, and are not representative of typical results. Actual availability, pricing and yields vary and are not a guarantee of future performance.</p>
     <p>If, after reading the guide, you want to explore a specific opportunity in this sector, you'll be directed to a separate process, completely independent of Silver Key Property. Any specific opportunity will only be presented following that separate process, and any related financial promotion will be issued or approved in line with section 21 of the Financial Services and Markets Act 2000.</p>
     <p>Property investment of any kind carries risk. Property values can fall as well as rise, income is not guaranteed, and property is generally illiquid, it may be difficult to sell or exit quickly. Past performance, and any figures referenced generally in relation to this sector, are not a reliable indicator of future results. You should not invest money you cannot afford to lose, and should seek independent financial and legal advice before making any investment decision.</p>
     <p>By submitting your details, you consent to being contacted about the free guide and related educational content.</p>
