@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Golden Key Property | Off Market UK Buy to Let Investment for Hong Kong Investors</title>
+<title>Golden Key Property | Off Market UK Buy to Let Investment for Singapore Investors</title>
 <meta name="description" content="Off-market, fully managed UK buy-to-let apartments. 1 & 2 bed units from £130,000. Register your interest as an overseas investor." />
 <link rel="icon" type="image/x-icon" href="favicon.ico" />
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
@@ -294,14 +294,14 @@ src="https://www.facebook.com/tr?id=2148765152722188&ev=PageView&noscript=1"
     <div class="hero-price-item">
       <span class="hero-price-label">1 Bed</span>
       <span class="hero-price-from">From</span>
-      <span class="hero-price-value">HK$1,300,000</span>
+      <span class="hero-price-value">S$221,000</span>
       <span class="hero-price-gbp">≈ £130,000</span>
     </div>
     <div class="hero-price-divider"></div>
     <div class="hero-price-item">
       <span class="hero-price-label">2 Bed</span>
       <span class="hero-price-from">From</span>
-      <span class="hero-price-value">HK$1,600,000</span>
+      <span class="hero-price-value">S$272,000</span>
       <span class="hero-price-gbp">≈ £160,000</span>
     </div>
   </div>
@@ -367,9 +367,9 @@ src="https://www.facebook.com/tr?id=2148765152722188&ev=PageView&noscript=1"
 <!-- WHY OVERSEAS INVESTORS -->
 <section class="section">
   <div class="container">
-    <span class="section-eyebrow">Built For Hong Kong Investors</span>
+    <span class="section-eyebrow">Built For Singapore Investors</span>
     <h2 class="section-title">A Headache-Free Offshore Investment</h2>
-    <p class="section-sub">Every step of the process is designed to work remotely, whether you're buying from Central, Kowloon, or anywhere else.</p>
+    <p class="section-sub">Every step of the process is designed to work remotely, whether you're buying from Orchard, Marina Bay, or anywhere else.</p>
     <div class="why-grid">
       <div class="why-card">
         <div class="why-icon">✓</div>
@@ -497,7 +497,7 @@ src="https://www.facebook.com/tr?id=2148765152722188&ev=PageView&noscript=1"
     Golden Key Property is a trading name of Silver Key Property, registered in England &amp; Wales. Registration number: 16016190.<br />
     167-169 Great Portland Street, 5th Floor, London, England, W1W 5PF &nbsp;·&nbsp; info@silverkeyproperty.co.uk<br /><br />
     <strong>Risk warning:</strong> This page is not a financial promotion. Investments in supported housing and other property-backed assets place your capital at risk; you may get back less than you invest. Past or targeted performance is not a reliable indicator of future results. Such investments are typically illiquid and may be complex or unregulated. Seek independent financial and legal advice before making any investment decision.<br /><br />
-    HKD figures shown on this page are indicative only, based on an approximate rate of £1 = HK$10, and are provided for reference. All transactions are conducted in GBP; exchange rates fluctuate and are not guaranteed. This page is intended for recipients based in Hong Kong and other jurisdictions where receiving this information is not restricted by local law; if you are unsure whether you are permitted to receive this material, please seek independent advice before proceeding.
+    SGD figures shown on this page are indicative only, based on an approximate rate of £1 = S$1.70, and are provided for reference. All transactions are conducted in GBP; exchange rates fluctuate and are not guaranteed. This page is intended for recipients based in Singapore and other jurisdictions where receiving this information is not restricted by local law; if you are unsure whether you are permitted to receive this material, please seek independent advice before proceeding.
   </p>
 </footer>
 
@@ -518,8 +518,8 @@ function getCookie(name) {
 }
 
 const phoneIti = window.intlTelInput(document.getElementById('phone'), {
-  initialCountry: 'hk',
-  preferredCountries: ['hk', 'sg', 'gb', 'cn', 'tw'],
+  initialCountry: 'sg',
+  preferredCountries: ['sg', 'my', 'hk', 'gb', 'cn'],
   separateDialCode: true,
   autoPlaceholder: 'polite',
 });
@@ -582,8 +582,8 @@ document.getElementById('submitBtn').addEventListener('click', function () {
       last_name: lnameEl.value.trim(),
       email: emailEl.value.trim(),
       phone: phoneIti.getNumber(),
-      source: 'Hong Kong Investor Funnel',
-      market: 'Hong Kong',
+      source: 'Singapore Investor Funnel',
+      market: 'Singapore',
       event_id: eventId,
       fbclid: fbclid,
       fbp: fbp,
@@ -597,7 +597,7 @@ document.getElementById('submitBtn').addEventListener('click', function () {
     // in Ads Manager from having both a client pixel and server CAPI event
     // with no way to dedupe them. PageView (in <head>) is unaffected.
     showSuccess();
-    try { sessionStorage.setItem('gkOriginPage', 'hong-kong.html'); } catch (e) {}
+    try { sessionStorage.setItem('gkOriginPage', 'singapore.html'); } catch (e) {}
     setTimeout(function () { window.location.href = 'booking.html'; }, 1800);
   }).catch(function () {
     submitBtn.disabled = false;

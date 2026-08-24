@@ -90,7 +90,7 @@
 
 <!-- HEADER -->
 <header class="header">
-  <a href="hong-kong.html" class="wordmark"><svg class="wordmark-icon" width="15" height="32" viewBox="75 42 51 110" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="100" cy="66" r="19" stroke="currentColor" stroke-width="7"/><rect x="95.5" y="85" width="9" height="62" fill="currentColor"/><rect x="104.5" y="126" width="15" height="7" fill="currentColor"/><rect x="104.5" y="138" width="11" height="7" fill="currentColor"/></svg>Golden Key<span> · </span>Property</a>
+  <a href="hong-kong.html" class="wordmark" id="homeLink"><svg class="wordmark-icon" width="15" height="32" viewBox="75 42 51 110" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="100" cy="66" r="19" stroke="currentColor" stroke-width="7"/><rect x="95.5" y="85" width="9" height="62" fill="currentColor"/><rect x="104.5" y="126" width="15" height="7" fill="currentColor"/><rect x="104.5" y="138" width="11" height="7" fill="currentColor"/></svg>Golden Key<span> · </span>Property</a>
 </header>
 
 <main>
@@ -104,7 +104,7 @@
         <li>A member of our team will call you at the time you selected</li>
         <li>Feel free to reply to the confirmation email if anything comes up beforehand</li>
       </ul>
-      <a href="hong-kong.html" class="btn-primary">Back to Homepage</a>
+      <a href="hong-kong.html" class="btn-primary" id="backLink">Back to Homepage</a>
     </div>
   </div>
 </main>
@@ -124,6 +124,19 @@
     <strong>Risk warning:</strong> This page is not a financial promotion. Property investment places your capital at risk; you may get back less than you invest. Past or targeted performance is not a reliable indicator of future results. Property is typically illiquid. Seek independent financial and legal advice before making any investment decision.
   </p>
 </footer>
+
+<script>
+// This page is shared across market landing pages (hong-kong.html,
+// singapore.html, ...). The origin page sets this before the booking flow
+// starts, so both links here point wherever the visitor actually came from.
+try {
+  var gkOrigin = sessionStorage.getItem('gkOriginPage');
+  if (gkOrigin) {
+    document.getElementById('homeLink').href = gkOrigin;
+    document.getElementById('backLink').href = gkOrigin;
+  }
+} catch (e) {}
+</script>
 
 </body>
 </html>
