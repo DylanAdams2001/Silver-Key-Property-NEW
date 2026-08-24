@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Golden Key Property | Off Market UK Buy to Let Investment for Hong Kong Investors</title>
+<meta name="description" content="Off-market, fully managed UK buy-to-let apartments. 1 & 2 bed units from £130,000. Register your interest as an overseas investor." />
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.8.0/build/css/intlTelInput.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2148765152722188');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2148765152722188&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel -->
+<style>
+  :root {
+    --black: #0a0a0a;
+    --white: #ffffff;
+    --graphite: #45474b;
+    --gold: #D4AF37;
+    --gold-deep: #96751F;
+    --gold-pale: #F8F0DA;
+    --brand-gradient: linear-gradient(135deg, #F5E6BC 0%, #D4AF37 50%, #B8922E 100%);
+    --light-grey: #f7f7f5;
+    --mid-grey: #57595c;
+    --line: #e3e3e0;
+    --face: 'Inter', -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+    --face-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--face); color: var(--black); background: var(--white); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3, h4 { font-family: var(--face); font-weight: 800; letter-spacing: -0.02em; }
+
+  /* HEADER */
+  .header {
+    background: var(--black);
+    padding: 16px 24px;
+    display: flex; align-items: center; justify-content: center;
+    position: sticky; top: 0; z-index: 100;
+    border-bottom: 1px solid rgba(212,175,55,0.25);
+  }
+  .header .wordmark { display: inline-flex; align-items: center; gap: 8px; font-family: var(--face-display); font-weight: 800; font-size: 1.1rem; letter-spacing: 0.01em; color: #fff; text-decoration: none; }
+  .header .wordmark span { color: var(--gold); }
+  .header .wordmark-icon { color: var(--gold); flex-shrink: 0; }
+
+  /* HERO section, UK skyline background photo */
+  .hero {
+    position: relative;
+    background: var(--black) url('images/hero-skyline.jpg') center 38%/cover no-repeat;
+    padding: 64px 24px 80px; text-align: center;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background:
+      linear-gradient(180deg, rgba(5,5,6,0.93) 0%, rgba(5,5,6,0.87) 40%, rgba(5,5,6,0.96) 100%),
+      radial-gradient(ellipse at 70% 0%, rgba(212,175,55,0.14) 0%, transparent 55%);
+  }
+  .hero > * { position: relative; z-index: 1; }
+  .hero h1 {
+    font-family: var(--face-display);
+    font-size: clamp(30px, 5.5vw, 56px); font-weight: 800; color: #fff;
+    line-height: 1.15; max-width: 860px; margin: 0 auto 20px; letter-spacing: -0.01em;
+  }
+  .hero h1 em { color: var(--gold); font-style: normal; }
+  .hero-kicker {
+    display: block; font-family: var(--face); font-size: 15px; font-weight: 800;
+    letter-spacing: 3px; color: var(--gold); margin-bottom: 10px; text-transform: uppercase;
+  }
+  .hero-facts { display: flex; flex-direction: column; align-items: center; gap: 9px; max-width: 480px; margin: 0 auto 34px; }
+  .hero-fact { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 15px; font-weight: 700; color: #fff; }
+  .hero-fact-check { color: var(--gold); font-weight: 800; }
+
+  /* FORM CARD */
+  .form-card {
+    background: var(--white); border-radius: 20px;
+    max-width: 560px; margin: 0 auto; padding: 38px 42px;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.1);
+    text-align: left;
+  }
+  .step { display: none; }
+  .step.active { display: block; }
+
+  .step h3 { font-size: 19px; font-weight: 700; color: var(--black); margin-bottom: 6px; line-height: 1.35; }
+  .step-hint { font-size: 12.5px; color: var(--mid-grey); margin-bottom: 20px; }
+
+  .input-group { margin-bottom: 14px; }
+  .input-label { display: block; font-size: 13px; font-weight: 600; color: var(--mid-grey); margin-bottom: 6px; }
+  .input-field {
+    width: 100%; padding: 14px 16px; border: 2px solid #E5E5E5; border-radius: 12px;
+    font-family: var(--face); font-size: 16px; color: var(--black);
+    outline: none; transition: border-color 0.2s; background: #FAFAFA;
+  }
+  .input-field:focus { border-color: var(--black); background: var(--gold-pale); }
+  .input-field.error { border-color: #E53E3E; }
+  .iti { width: 100%; display: block; }
+  .hp-field { position: absolute; opacity: 0; height: 0; width: 0; pointer-events: none; }
+
+  .cta-btn {
+    display: block; width: 100%; padding: 18px; background: var(--black); color: #fff;
+    border: 1px solid var(--black); border-radius: 12px; font-family: var(--face); font-size: 14px;
+    font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; cursor: pointer;
+    transition: all 0.2s ease; margin-top: 6px; text-decoration: none; text-align: center;
+  }
+  .cta-btn:hover { background: var(--brand-gradient); color: var(--black); border-color: transparent; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(10,10,10,0.2); }
+  .cta-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+  .btn-spinner {
+    display: inline-block; width: 15px; height: 15px; vertical-align: middle; margin-right: 8px;
+    border: 2px solid rgba(255,255,255,0.35); border-top-color: #fff; border-radius: 50%;
+    animation: btnSpin 0.7s linear infinite;
+  }
+  @keyframes btnSpin { to { transform: rotate(360deg); } }
+  .trust-note { display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 12px; color: #AAA; margin-top: 12px; }
+  .form-error { display: none; font-size: 12.5px; color: #E53E3E; margin-top: 10px; text-align: center; }
+  .form-error.show { display: block; }
+
+  .success-wrap { text-align: center; padding: 12px 0; }
+  .success-icon {
+    width: 68px; height: 68px; background: linear-gradient(135deg, #2a2b2d, var(--black));
+    border: 2px solid var(--gold);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 18px; font-size: 30px; color: #fff; font-weight: 700;
+    transform: scale(0); opacity: 0;
+  }
+  .success-icon.pop { animation: tickPop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+  @keyframes tickPop {
+    0% { transform: scale(0); opacity: 0; }
+    60% { transform: scale(1.15); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  .success-wrap h3 { font-size: 24px; font-weight: 800; color: var(--black); margin-bottom: 10px; }
+  .success-wrap p { font-size: 15px; color: var(--mid-grey); margin-bottom: 0; line-height: 1.6; }
+
+  /* SECTIONS */
+  .section { padding: 80px 24px; }
+  .section-grey { background: var(--light-grey); }
+  .container { max-width: 940px; margin: 0 auto; }
+  .section-eyebrow { display: block; text-align: center; font-weight: 700; font-size: 10px; letter-spacing: 2.5px; color: var(--graphite); text-transform: uppercase; margin-bottom: 12px; }
+  .section-title { font-family: var(--face-display); font-size: clamp(26px, 4vw, 42px); font-weight: 800; text-align: center; line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 14px; color: var(--black); }
+  .section-sub { font-size: 16px; color: var(--mid-grey); text-align: center; max-width: 600px; margin: 0 auto 48px; line-height: 1.65; }
+
+  /* WHY OVERSEAS GRID */
+  .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .why-card { background: var(--white); border-radius: 14px; padding: 26px 22px; border: 1px solid var(--line); text-align: center; }
+  .why-icon { width: 44px; height: 44px; border-radius: 50%; background: var(--gold-pale); color: var(--black); display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; font-size: 18px; font-weight: 800; }
+  .why-card h4 { font-size: 14.5px; font-weight: 700; color: var(--black); margin-bottom: 8px; line-height: 1.35; }
+  .why-card p { font-size: 13px; color: var(--mid-grey); line-height: 1.6; }
+
+  /* WHAT'S INSIDE GRID */
+  .inside-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .inside-card { background: var(--white); border-radius: 14px; padding: 26px 22px; border-top: 3px solid var(--black); box-shadow: 0 2px 12px rgba(0,0,0,0.06); text-align: center; }
+  .inside-num { font-weight: 800; font-size: 34px; color: var(--gold); line-height: 1; margin-bottom: 4px; }
+  .inside-card h4 { font-size: 15px; font-weight: 700; color: var(--black); margin-bottom: 6px; line-height: 1.35; }
+  .inside-card p { font-size: 13px; color: var(--mid-grey); line-height: 1.6; }
+
+  /* TESTIMONIALS */
+  .t-pair.t-grid-3 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+  .t-card { background: var(--white); border-radius: 18px; padding: 32px 34px; box-shadow: 0 6px 32px rgba(0,0,0,0.08); display: flex; flex-direction: column; }
+  .t-quote { font-size: 56px; line-height: 0.8; color: var(--graphite); font-family: Georgia, serif; opacity: 0.3; margin-bottom: 4px; display: block; }
+  .t-stars { color: var(--gold-deep); font-size: 13px; margin-bottom: 14px; letter-spacing: 2px; }
+  .t-text { font-size: 14.5px; color: #333; line-height: 1.8; font-style: italic; margin-bottom: 22px; flex: 1; }
+  .t-author { display: flex; align-items: center; gap: 13px; }
+  .t-avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--black); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 12px; color: #fff; flex-shrink: 0; }
+  .t-name { font-weight: 700; font-size: 14px; color: var(--black); }
+  .t-role { font-size: 12.5px; color: var(--mid-grey); margin-top: 2px; }
+  .t-caveat { text-align: center; font-size: 12.5px; color: var(--mid-grey); margin-top: 22px; max-width: 60ch; margin-left: auto; margin-right: auto; }
+
+  /* FAQ */
+  .faq-list { max-width: 720px; margin: 0 auto; }
+  .faq-item { border-bottom: 1px solid #E8E8E8; }
+  .faq-item:first-child { border-top: 1px solid #E8E8E8; }
+  .faq-trigger {
+    width: 100%; text-align: left; padding: 20px 0; background: none; border: none; cursor: pointer;
+    font-size: 15px; font-weight: 600; color: var(--black);
+    display: flex; justify-content: space-between; align-items: center; gap: 20px; transition: color 0.2s;
+  }
+  .faq-trigger:hover { color: var(--black); }
+  .faq-icon { font-size: 20px; font-weight: 300; color: var(--black); flex-shrink: 0; transition: transform 0.25s ease; line-height: 1; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+  .faq-body { font-size: 14.5px; color: var(--mid-grey); line-height: 1.75; max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.25s ease; }
+  .faq-item.open .faq-body { max-height: 400px; padding-bottom: 20px; }
+
+  /* BOTTOM CTA */
+  .bottom-cta {
+    background: var(--black);
+    background-image: radial-gradient(ellipse at 30% 100%, rgba(212,175,55,0.14) 0%, transparent 55%);
+    padding: 88px 24px; text-align: center;
+  }
+  .bottom-cta h2 { font-family: var(--face-display); font-size: clamp(26px, 4.5vw, 44px); font-weight: 800; color: #fff; margin-bottom: 16px; letter-spacing: -0.01em; }
+  .bottom-cta h2 em { color: var(--gold); font-style: normal; }
+  .bottom-cta p { font-size: 16px; color: rgba(255,255,255,0.58); max-width: 500px; margin: 0 auto 32px; }
+  .scroll-btn {
+    display: inline-block; padding: 17px 42px; background: var(--brand-gradient); color: var(--black);
+    border: none; border-radius: 12px; font-family: var(--face); font-size: 13.5px;
+    font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; cursor: pointer; transition: all 0.2s ease;
+  }
+  .scroll-btn:hover { background: var(--gold-deep); color: #fff; transform: translateY(-2px); box-shadow: 0 12px 36px rgba(212,175,55,0.3); }
+
+  /* FOOTER */
+  .footer { background: var(--black); padding: 44px 24px; text-align: center; border-top: 1px solid rgba(255,255,255,0.06); }
+  .footer .wordmark { display: inline-flex; align-items: center; gap: 8px; font-family: var(--face-display); font-weight: 800; font-size: 1.05rem; letter-spacing: 0.01em; color: #fff; margin-bottom: 20px; }
+  .footer .wordmark span { color: var(--gold); }
+  .footer .wordmark-icon { color: var(--gold); }
+  .footer-links { display: flex; align-items: center; justify-content: center; gap: 26px; flex-wrap: wrap; margin-bottom: 18px; }
+  .footer-links a { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-copy { font-size: 11.5px; color: rgba(255,255,255,0.24); line-height: 1.8; max-width: 640px; margin: 0 auto; }
+
+  /* STATS BAR */
+  .stats-bar { background: var(--black); padding: 30px 24px; border-top: 1px solid rgba(212,175,55,0.15); }
+  .stats-row { max-width: 940px; margin: 0 auto; display: flex; justify-content: center; align-items: center; gap: 56px; flex-wrap: wrap; }
+  .stat-item { flex: 0 1 auto; text-align: center; }
+  .stat-item .stat-num { display: block; font-family: var(--face-display); font-size: clamp(22px, 3vw, 30px); font-weight: 800; color: var(--gold); line-height: 1; margin-bottom: 6px; }
+  .stat-item .stat-label { display: block; font-size: 11px; color: rgba(255,255,255,0.55); font-weight: 600; letter-spacing: 0.6px; text-transform: uppercase; }
+
+  /* HERO PRICING */
+  .hero-pricing { display: flex; justify-content: center; align-items: center; gap: 32px; margin: 0 auto 28px; flex-wrap: wrap; }
+  .hero-price-item { text-align: center; }
+  .hero-price-label { display: block; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 6px; }
+  .hero-price-from { display: block; font-size: 11px; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }
+  .hero-price-value { display: block; font-family: var(--face-display); font-size: clamp(24px, 3.4vw, 30px); font-weight: 800; color: var(--gold); }
+  .hero-price-gbp { display: block; font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 4px; }
+  .hero-price-divider { width: 1px; height: 56px; background: rgba(255,255,255,0.15); }
+
+  /* STICKY MOBILE CTA */
+  .sticky-cta {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 200;
+    display: none; align-items: center; justify-content: space-between; gap: 14px;
+    background: rgba(10,10,10,0.97); backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 12px 16px; padding-bottom: max(12px, env(safe-area-inset-bottom));
+    transform: translateY(100%); transition: transform 0.3s ease;
+  }
+  .sticky-cta.show { transform: translateY(0); }
+  .sticky-cta-text { color: #fff; font-size: 12.5px; font-weight: 700; line-height: 1.3; }
+  .sticky-cta-text span { display: block; color: rgba(255,255,255,0.5); font-size: 10.5px; font-weight: 500; margin-top: 1px; }
+  .sticky-cta-btn {
+    flex-shrink: 0; background: var(--brand-gradient); color: var(--black); border: none;
+    border-radius: 10px; padding: 13px 18px; font-family: var(--face); font-size: 12px;
+    font-weight: 800; letter-spacing: 0.6px; text-transform: uppercase; cursor: pointer; white-space: nowrap;
+  }
+
+  @media (max-width: 900px) {
+    .why-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 700px) {
+    .form-card { padding: 26px 20px; }
+    .hero-pricing { gap: 20px; }
+    .why-grid { grid-template-columns: 1fr; }
+    .inside-grid { grid-template-columns: 1fr; }
+    .t-pair.t-grid-3 {
+      display: flex; grid-template-columns: none; overflow-x: auto; scroll-snap-type: x mandatory;
+      gap: 16px; padding: 4px 16px 14px; margin: 0 -16px; -webkit-overflow-scrolling: touch;
+    }
+    .t-pair.t-grid-3 .t-card { flex: 0 0 82%; scroll-snap-align: center; }
+    .t-card { padding: 26px 22px; }
+    .hero { padding: 44px 16px 64px; }
+    .section { padding: 56px 16px; }
+    .sticky-cta { display: flex; }
+    .stats-row { gap: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <a href="#" class="wordmark"><svg class="wordmark-icon" width="15" height="32" viewBox="75 42 51 110" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="100" cy="66" r="19" stroke="currentColor" stroke-width="7"/><rect x="95.5" y="85" width="9" height="62" fill="currentColor"/><rect x="104.5" y="126" width="15" height="7" fill="currentColor"/><rect x="104.5" y="138" width="11" height="7" fill="currentColor"/></svg>Golden Key<span> · </span>Property</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1><span class="hero-kicker">Off Market Exclusive:</span>Completed Buy to Let Investment</h1>
+
+  <div class="hero-pricing">
+    <div class="hero-price-item">
+      <span class="hero-price-label">1 Bed</span>
+      <span class="hero-price-from">From</span>
+      <span class="hero-price-value">HK$1,300,000</span>
+      <span class="hero-price-gbp">≈ £130,000</span>
+    </div>
+    <div class="hero-price-divider"></div>
+    <div class="hero-price-item">
+      <span class="hero-price-label">2 Bed</span>
+      <span class="hero-price-from">From</span>
+      <span class="hero-price-value">HK$1,600,000</span>
+      <span class="hero-price-gbp">≈ £160,000</span>
+    </div>
+  </div>
+
+  <div class="hero-facts">
+    <div class="hero-fact"><span class="hero-fact-check">✓</span> Cash Buyers Only, No Mortgages</div>
+    <div class="hero-fact"><span class="hero-fact-check">✓</span> Assured, Long Term &amp; High Yield</div>
+    <div class="hero-fact"><span class="hero-fact-check">✓</span> Fully Managed, All Costs Included</div>
+  </div>
+
+  <!-- REGISTRATION FORM -->
+  <div class="form-card">
+    <!-- Form -->
+    <div class="step active" id="stepForm">
+      <h3>Request Investment Information</h3>
+      <p class="step-hint">Get current pricing, availability and the full brochure sent straight to you.</p>
+      <input class="hp-field" type="text" id="hpField" name="website" tabindex="-1" autocomplete="off" />
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div class="input-group">
+          <label class="input-label" for="fname">First Name</label>
+          <input type="text" class="input-field" id="fname" placeholder="e.g. James" autocomplete="given-name" />
+        </div>
+        <div class="input-group">
+          <label class="input-label" for="lname">Last Name</label>
+          <input type="text" class="input-field" id="lname" placeholder="e.g. Harrison" autocomplete="family-name" />
+        </div>
+      </div>
+      <div class="input-group">
+        <label class="input-label" for="email">Email Address</label>
+        <input type="email" class="input-field" id="email" placeholder="e.g. james@example.com" autocomplete="email" />
+      </div>
+      <div class="input-group">
+        <label class="input-label" for="phone">Mobile Number</label>
+        <input type="tel" class="input-field" id="phone" autocomplete="tel" />
+      </div>
+      <button type="button" class="cta-btn" id="submitBtn">Request Investment Information →</button>
+      <p class="trust-note">🔒 Your details are 100% private. No spam, ever.</p>
+      <p class="form-error" id="formError">Something went wrong sending your details. Please try again in a moment.</p>
+    </div>
+
+    <!-- Success -->
+    <div class="step" id="stepSuccess">
+      <div class="success-wrap">
+        <div class="success-icon">✓</div>
+        <h3>You're Registered!</h3>
+        <p>Taking you to your call booking now…</p>
+        <p class="trust-note" style="margin-top:8px">No pitch. No pressure. No commitment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR. .ph = confirmed placeholder, swap for real figures before publishing -->
+<div class="stats-bar">
+  <div class="stats-row">
+    <div class="stat-item"><span class="stat-num">4.8★</span><span class="stat-label">Trustpilot Rating</span></div>
+    <div class="stat-item"><span class="stat-num">100+</span><span class="stat-label">Properties Delivered</span></div>
+    <div class="stat-item"><span class="stat-num">12%</span><span class="stat-label">Target Net Yield</span></div>
+  </div>
+</div>
+
+<!-- WHY OVERSEAS INVESTORS -->
+<section class="section">
+  <div class="container">
+    <span class="section-eyebrow">Built For Overseas Investors</span>
+    <h2 class="section-title">Investing From Hong Kong, Made Straightforward</h2>
+    <p class="section-sub">Every step of the process is designed to work remotely, whether you're buying from Central, Kowloon, or anywhere else.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">✓</div>
+        <h4>Cash Purchase</h4>
+        <p>No mortgage option, cash purchase only. This simplifies the process considerably for overseas buyers.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">↔</div>
+        <h4>Remote Onboarding</h4>
+        <p>Identity checks, paperwork and solicitor instruction are all designed to be completed without visiting the UK.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">£</div>
+        <h4>Freehold Title, Your Name</h4>
+        <p>You own the asset outright, the same as any UK resident buyer, with your name on the title deeds.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INSIDE -->
+<section class="section">
+  <div class="container">
+    <span class="section-eyebrow">How It Works</span>
+    <h2 class="section-title">Understanding The Investment</h2>
+    <div class="inside-grid">
+      <div class="inside-card">
+        <div class="inside-num">01</div>
+        <h4>Fully Managed</h4>
+        <p>Tenant sourcing, rent collection and day-to-day management, all included.</p>
+      </div>
+      <div class="inside-card">
+        <div class="inside-num">02</div>
+        <h4>Rental Income</h4>
+        <p>Paid to you directly, with full transparency at every step.</p>
+      </div>
+      <div class="inside-card">
+        <div class="inside-num">03</div>
+        <h4>Real Yield Breakdown</h4>
+        <p>See exactly how the 12% net figure is calculated.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section section-grey">
+  <div class="container">
+    <span class="section-eyebrow">Investor Stories</span>
+    <h2 class="section-title">What Our Investors Are Saying</h2>
+    <p class="section-sub">Real words from real clients who've invested through Golden Key Property.</p>
+
+    <div class="t-pair t-grid-3">
+      <div class="t-card">
+        <span class="t-quote">"</span>
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">Very smooth process from Hong Kong, everything can be done online and through WhatsApp, no need to fly over. Rental yield is as promised and tenant found very fast. Professional team, will introduce to my friends.</p>
+        <div class="t-author"><div class="t-avatar">JL</div><div><div class="t-name">Jian L.</div><div class="t-role">Investor, Hong Kong</div></div></div>
+      </div>
+      <div class="t-card">
+        <span class="t-quote">"</span>
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">First time buying property overseas so I was quite worried, but the team explained everything clearly and the paperwork was handled properly. Off-market means better price than what I saw on the property portals. Very satisfied with the return so far.</p>
+        <div class="t-author"><div class="t-avatar">JT</div><div><div class="t-name">Jane T.</div><div class="t-role">Investor, Singapore</div></div></div>
+      </div>
+      <div class="t-card">
+        <span class="t-quote">"</span>
+        <div class="t-stars">★★★★☆</div>
+        <p class="t-text">Good investment, completion was on time and rental income started right away. Communication could be a bit faster given the time difference but overall no problem, they always reply. Would buy another property through them.</p>
+        <div class="t-author"><div class="t-avatar">HW</div><div><div class="t-name">Huan W.</div><div class="t-role">Investor, Singapore</div></div></div>
+      </div>
+      <div class="t-card">
+        <span class="t-quote">"</span>
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">Already have a few properties in the UK so I know what to look for, this one was priced well below market and the numbers are accurate, not exaggerated like some other agents. Whole transaction handled remotely, very convenient. Highly recommend.</p>
+        <div class="t-author"><div class="t-avatar">DR</div><div><div class="t-name">David R.</div><div class="t-role">Investor, UK</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-grey">
+  <div class="container">
+    <span class="section-eyebrow">Common Questions</span>
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="toggleFaq(this)">Can I mortgage the property?<span class="faq-icon">+</span></button>
+        <div class="faq-body">No, this is a cash purchase only. There's no mortgage option on this opportunity, which simplifies the process considerably for overseas buyers.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="toggleFaq(this)">Is the property fully managed?<span class="faq-icon">+</span></button>
+        <div class="faq-body">Yes. Tenant sourcing, rent collection and day-to-day management are handled on your behalf as part of the service, so you don't need to be in the UK, or hands-on, to hold the investment.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="toggleFaq(this)">Is the yield really 12% net?<span class="faq-icon">+</span></button>
+        <div class="faq-body">Yes. The 12% figure is a net yield, calculated after all costs and expenses, not a headline gross number.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="toggleFaq(this)">How long until I can receive a return on investment?<span class="faq-icon">+</span></button>
+        <div class="faq-body">Typically 30 to 60 days from reservation to your first rental payment. Since this is a completed development rather than off-plan, our management team starts sourcing a tenant as soon as your purchase completes, so income begins as quickly as the letting process allows rather than waiting on construction.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta">
+  <h2>Ready to Build Your <em>UK Property Portfolio?</em></h2>
+  <p>Register your interest and take the first step toward a fully managed, hands-off rental income stream, from anywhere in the world.</p>
+  <button class="scroll-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">Request Investment Information →</button>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wordmark"><svg class="wordmark-icon" width="15" height="32" viewBox="75 42 51 110" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="100" cy="66" r="19" stroke="currentColor" stroke-width="7"/><rect x="95.5" y="85" width="9" height="62" fill="currentColor"/><rect x="104.5" y="126" width="15" height="7" fill="currentColor"/><rect x="104.5" y="138" width="11" height="7" fill="currentColor"/></svg>Golden Key<span> · </span>Property</div>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms &amp; Conditions</a>
+    <a href="https://silverkeyproperty.co.uk" target="_blank" rel="noopener">Website</a>
+  </div>
+  <p class="footer-copy">
+    &copy; 2026 Golden Key Property. All rights reserved.<br />
+    Golden Key Property is a trading name of Silver Key Property, registered in England &amp; Wales. Registration number: 16016190.<br />
+    167-169 Great Portland Street, 5th Floor, London, England, W1W 5PF &nbsp;·&nbsp; info@silverkeyproperty.co.uk<br /><br />
+    <strong>Risk warning:</strong> This page is not a financial promotion. Investments in supported housing and other property-backed assets place your capital at risk; you may get back less than you invest. Past or targeted performance is not a reliable indicator of future results. Such investments are typically illiquid and may be complex or unregulated. Seek independent financial and legal advice before making any investment decision.<br /><br />
+    HKD figures shown on this page are indicative only, based on an approximate rate of £1 = HK$10, and are provided for reference. All transactions are conducted in GBP; exchange rates fluctuate and are not guaranteed. This page is intended for recipients based in Hong Kong and other jurisdictions where receiving this information is not restricted by local law; if you are unsure whether you are permitted to receive this material, please seek independent advice before proceeding.
+  </p>
+</footer>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <div class="sticky-cta-text">Request Investment Information<span>60 seconds, no obligation</span></div>
+  <button type="button" class="sticky-cta-btn" id="stickyCtaBtn">Register Interest →</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.8.0/build/js/intlTelInputWithUtils.min.js"></script>
+<script>
+// Paste your GHL "Inbound Webhook" trigger URL here (Workflows > Add Trigger > Inbound Webhook).
+const GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/HEOut7IJQ2GxJIUq9qIb/webhook-trigger/6be855f0-003d-46a0-b83b-a2c65a978f74";
+
+function getCookie(name) {
+  const match = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
+  return match ? decodeURIComponent(match[1]) : '';
+}
+
+const phoneIti = window.intlTelInput(document.getElementById('phone'), {
+  initialCountry: 'hk',
+  preferredCountries: ['hk', 'sg', 'gb', 'cn', 'tw'],
+  separateDialCode: true,
+  autoPlaceholder: 'polite',
+});
+
+function showSuccess() {
+  document.getElementById('stepForm').classList.remove('active');
+  document.getElementById('stepSuccess').classList.add('active');
+  const icon = document.querySelector('.success-icon');
+  icon.classList.remove('pop');
+  void icon.offsetWidth; // restart the animation if this ever fires twice
+  icon.classList.add('pop');
+}
+
+function phoneNumberOk() { return phoneIti.isValidNumber(); }
+
+document.getElementById('submitBtn').addEventListener('click', function () {
+  if (document.getElementById('hpField').value) return; // honeypot: bots only
+
+  const fnameEl = document.getElementById('fname');
+  const lnameEl = document.getElementById('lname');
+  const emailEl = document.getElementById('email');
+  const phoneEl = document.getElementById('phone');
+  const errorBox = document.getElementById('formError');
+
+  let valid = true;
+  [fnameEl, lnameEl].forEach(function (el) {
+    el.classList.toggle('error', !el.value.trim());
+    if (!el.value.trim()) valid = false;
+  });
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value.trim());
+  emailEl.classList.toggle('error', !emailOk);
+  if (!emailOk) valid = false;
+  const phoneOk = phoneNumberOk();
+  phoneEl.classList.toggle('error', !phoneOk);
+  if (!phoneOk) valid = false;
+  if (!valid) return;
+
+  errorBox.classList.remove('show');
+  const submitBtn = document.getElementById('submitBtn');
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '<span class="btn-spinner"></span>Sending...';
+
+  const eventId = 'lead_' + Date.now() + '_' + Math.random().toString(36).slice(2);
+
+  // Meta CAPI match-quality signals, so GHL's server-side event can be
+  // deduplicated against (and matched as well as) this browser-side one.
+  // fbclid: the raw click-id URL param, for GHL's native FBCLID field.
+  // fbc: Meta's formatted version (fb.1.<timestamp>.<fbclid>), sent as a
+  // fallback in case a mapping ever needs the pre-built string instead.
+  const fbclid = new URLSearchParams(window.location.search).get('fbclid') || '';
+  let fbc = getCookie('_fbc');
+  if (!fbc && fbclid) fbc = 'fb.1.' + Date.now() + '.' + fbclid;
+  const fbp = getCookie('_fbp');
+
+  fetch(GHL_WEBHOOK_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      first_name: fnameEl.value.trim(),
+      last_name: lnameEl.value.trim(),
+      email: emailEl.value.trim(),
+      phone: phoneIti.getNumber(),
+      source: 'Hong Kong Investor Funnel',
+      market: 'Hong Kong',
+      event_id: eventId,
+      fbclid: fbclid,
+      fbp: fbp,
+      fbc: fbc,
+      user_agent: navigator.userAgent
+    })
+  }).then(function (response) {
+    if (!response.ok) throw new Error('Webhook responded with an error');
+    // Lead event is sent server-side via GHL's Conversions API automation,
+    // not from the browser -- avoids the double-counted Lead events we saw
+    // in Ads Manager from having both a client pixel and server CAPI event
+    // with no way to dedupe them. PageView (in <head>) is unaffected.
+    showSuccess();
+    setTimeout(function () { window.location.href = 'hong-kong-booking.html'; }, 1800);
+  }).catch(function () {
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Request Investment Information →';
+    errorBox.classList.add('show');
+  });
+});
+
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const was = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function (i) { i.classList.remove('open'); });
+  if (!was) item.classList.add('open');
+}
+
+// Sticky mobile CTA: hidden while the hero form is on screen, and while the
+// bottom CTA section (which already has its own big button) is on screen.
+(function () {
+  const stickyCta = document.getElementById('stickyCta');
+  const heroSection = document.querySelector('.hero');
+  const bottomCtaSection = document.querySelector('.bottom-cta');
+  if (!stickyCta || !heroSection || !bottomCtaSection || !('IntersectionObserver' in window)) return;
+
+  let heroVisible = true;
+  let bottomVisible = false;
+  function update() {
+    stickyCta.classList.toggle('show', !heroVisible && !bottomVisible);
+  }
+  new IntersectionObserver(function (entries) {
+    heroVisible = entries[0].isIntersecting;
+    update();
+  }, { threshold: 0 }).observe(heroSection);
+  new IntersectionObserver(function (entries) {
+    bottomVisible = entries[0].isIntersecting;
+    update();
+  }, { threshold: 0 }).observe(bottomCtaSection);
+
+  document.getElementById('stickyCtaBtn').addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+
+</script>
+</body>
+</html>

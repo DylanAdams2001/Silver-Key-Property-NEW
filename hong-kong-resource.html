@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Investor Resource Guide | Golden Key Property</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #0a0a0a;
+    --ink-soft: #57595c;
+    --line: #e3e3e0;
+    --card: #f7f7f5;
+    --gold: #D4AF37;
+    --gold-deep: #96751F;
+    --gold-pale: #F8F0DA;
+    --face: 'Inter', -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+    --face-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #e9e9e7; }
+  body { font-family: var(--face); color: var(--ink); line-height: 1.6; }
+  h1, h2, h3 { font-family: var(--face-display); font-weight: 800; letter-spacing: -0.01em; margin: 0; color: var(--ink); }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 20px; }
+  li { margin-bottom: 8px; }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 20px auto;
+    background: #ffffff;
+    padding: 22mm 20mm;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    position: relative;
+  }
+  .page-num {
+    position: absolute;
+    bottom: 12mm;
+    right: 20mm;
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+    font-weight: 600;
+  }
+  .wordmark { font-family: var(--face-display); font-weight: 800; font-size: 1.05rem; letter-spacing: 0.01em; }
+  .wordmark span { color: var(--gold); }
+
+  .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    display: block;
+    margin-bottom: 10px;
+    font-family: var(--face);
+  }
+
+  /* Cover page */
+  .page.cover-page { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+  .cover-dark {
+    flex: 1;
+    background: #0a0a0a url('images/hero-skyline.jpg') center 38%/cover no-repeat;
+    position: relative;
+    color: #f5f5f3;
+    padding: 56px 20mm 40px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .cover-dark::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(5,5,6,0.90) 0%, rgba(5,5,6,0.82) 45%, rgba(5,5,6,0.95) 100%);
+  }
+  .cover-dark > * { position: relative; z-index: 1; }
+  .cover-dark .wordmark { color: #fff; }
+  .cover-bar { height: 4px; background: var(--gold); width: 64px; border-radius: 3px; margin-bottom: 22px; }
+  .cover-dark .kicker { font-family: var(--face); font-size: 0.85rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 16px; }
+  .cover-dark h1 { font-size: 2.5rem; line-height: 1.1; color: #fff; margin-bottom: 18px; }
+  .cover-dark p.standfirst { font-family: var(--face); font-size: 1.02rem; color: #d6d7d9; max-width: 36ch; font-weight: 500; margin: 0; }
+  .cover-dark .cover-bottom { border-top: 1px solid rgba(255,255,255,0.15); padding-top: 14px; font-family: var(--face); font-size: 0.78rem; color: #cfd0d2; display: flex; justify-content: space-between; margin: 0; }
+
+  h2.section-title { font-size: 1.6rem; margin-bottom: 6px; }
+  .section-sub { font-family: var(--face); color: var(--ink-soft); font-size: 0.98rem; margin-bottom: 24px; }
+
+  .callout {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 18px 20px;
+    font-family: var(--face);
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    margin: 18px 0;
+  }
+  .callout strong { color: var(--ink); }
+
+  .steps { list-style: none; padding: 0; margin: 20px 0; counter-reset: step; }
+  .steps li {
+    counter-increment: step;
+    display: flex; gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    font-family: var(--face);
+    font-size: 0.95rem;
+  }
+  .steps li:last-child { border-bottom: none; }
+  .steps li::before {
+    content: counter(step);
+    flex-shrink: 0;
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: #fff;
+    font-weight: 800; font-size: 0.8rem;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .steps li .step-body .step-day { display: block; font-family: var(--face); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 3px; }
+  .steps li .step-body b { display: block; margin-bottom: 2px; font-family: var(--face-display); font-weight: 700; }
+  .steps li .step-body span { color: var(--ink-soft); font-size: 0.88rem; }
+
+  /* Contents page */
+  .contents-list { list-style: none; padding: 0; margin: 24px 0 0; }
+  .contents-list li {
+    display: flex; align-items: baseline; gap: 14px;
+    padding: 12px 0; border-bottom: 1px solid var(--line);
+    font-family: var(--face); font-weight: 700; font-size: 0.98rem;
+  }
+  .contents-list li .num { color: var(--gold-deep); font-weight: 800; width: 24px; flex-shrink: 0; }
+  .intro-text { margin-top: 28px; font-family: var(--face); font-size: 1rem; color: var(--ink-soft); }
+
+  /* Pricing tiles */
+  .price-tiles { display: flex; gap: 18px; margin: 20px 0; }
+  .price-tile { flex: 1; border: 1px solid var(--line); border-top: 3px solid var(--gold); border-radius: 10px; padding: 20px 18px; text-align: center; }
+  .price-tile-label { display: block; font-family: var(--face); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 8px; }
+  .price-tile-from { display: block; font-family: var(--face); font-size: 0.68rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.05em; }
+  .price-tile-value { display: block; font-family: var(--face-display); font-size: 1.5rem; font-weight: 800; color: var(--ink); margin: 2px 0; }
+  .price-tile-gbp { display: block; font-family: var(--face); font-size: 0.78rem; color: var(--ink-soft); }
+
+  .fact-strip { display: flex; gap: 14px; margin: 20px 0; }
+  .fact-item { flex: 1; border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; font-family: var(--face); font-size: 0.85rem; font-weight: 700; text-align: center; color: var(--ink); }
+  .fact-item span { color: var(--gold-deep); margin-right: 4px; }
+
+  .stat-strip { display: flex; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; margin: 20px 0; }
+  .stat-strip .stat { flex: 1; background: #fff; padding: 16px 14px; text-align: center; }
+  .stat-strip .stat .num { display: block; font-family: var(--face-display); font-size: 1.4rem; font-weight: 800; color: var(--gold-deep); }
+  .stat-strip .stat .label { display: block; font-family: var(--face); font-size: 0.7rem; color: var(--ink-soft); font-weight: 600; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.04em; }
+
+  .two-col { display: flex; gap: 28px; margin-top: 20px; font-family: var(--face); }
+  .two-col .col { flex: 1; }
+  .two-col h3 { font-family: var(--face); font-size: 0.9rem; margin-bottom: 10px; color: var(--gold-deep); text-transform: uppercase; letter-spacing: 0.04em; }
+  .two-col ul { padding-left: 18px; }
+  .two-col li { font-size: 0.9rem; margin-bottom: 8px; }
+
+  .faq-item { padding: 10px 0; border-bottom: 1px solid var(--line); font-family: var(--face); }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-item .q { font-weight: 700; font-size: 0.95rem; margin-bottom: 4px; }
+  .faq-item .a { font-size: 0.9rem; color: var(--ink-soft); margin: 0; }
+
+  .t-card { border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; margin-bottom: 14px; font-family: var(--face); }
+  .t-stars { color: var(--gold-deep); font-size: 0.8rem; margin-bottom: 8px; letter-spacing: 2px; }
+  .t-text { font-size: 0.88rem; color: #333; line-height: 1.7; font-style: italic; margin-bottom: 10px; }
+  .t-author { font-size: 0.82rem; font-weight: 700; color: var(--ink); }
+  .t-role { font-weight: 500; color: var(--ink-soft); }
+
+  .disclaimer-box { font-family: var(--face); font-size: 0.78rem; color: var(--ink-soft); line-height: 1.6; }
+  .disclaimer-box p { margin: 0 0 8px; }
+  .disclaimer-box p:last-child { margin-bottom: 0; }
+
+  .cta-box {
+    background: var(--ink);
+    color: #fff;
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin: 14px 0;
+    font-family: var(--face);
+  }
+  .cta-box h3 { color: #fff; font-family: var(--face-display); font-size: 1.05rem; margin-bottom: 6px; }
+  .cta-box p { color: #c7c8ca; margin-bottom: 0; font-size: 0.88rem; }
+
+  .placeholder { color: #92400e; background: #fef3c7; padding: 1px 6px; border-radius: 3px; font-weight: 700; font-size: 0.92em; }
+
+  .download-btn {
+    position: fixed; top: 20px; right: 20px; z-index: 500;
+    display: flex; align-items: center; gap: 8px;
+    background: var(--ink); color: #fff; border: none; border-radius: 10px;
+    padding: 13px 22px; font-family: var(--face); font-size: 13px; font-weight: 800;
+    letter-spacing: 0.4px; cursor: pointer; box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    transition: all 0.2s ease;
+  }
+  .download-btn:hover { background: linear-gradient(135deg, #F5E6BC 0%, var(--gold) 50%, var(--gold-deep) 100%); color: var(--ink); }
+  .download-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none; margin: 0; page-break-after: always; }
+    .page:last-child { page-break-after: auto; }
+    .download-btn { display: none; }
+  }
+  @page { size: A4; margin: 0; }
+</style>
+</head>
+<body>
+
+<button type="button" class="download-btn" onclick="window.print()">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+  Download PDF
+</button>
+
+<!-- PAGE 1: COVER -->
+<div class="page cover-page">
+  <div class="cover-dark">
+    <div class="wordmark">Golden Key<span>·</span>Property</div>
+    <div>
+      <div class="cover-bar"></div>
+      <span class="kicker">Off Market Exclusive</span>
+      <h1>Completed Buy to Let<br />Investment</h1>
+      <p class="standfirst">1 &amp; 2 bed apartments from £130,000. A practical resource for overseas investors: pricing, process, and what to expect.</p>
+    </div>
+    <div class="cover-bottom">
+      <span>Investor Resource Guide</span>
+      <span>goldenkeyproperty.co.uk</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2: CONTENTS + INTRO -->
+<div class="page">
+  <span class="eyebrow">Contents</span>
+  <h2 class="section-title">What's inside this guide</h2>
+  <ol class="contents-list">
+    <li><span class="num">01</span> The Opportunity</li>
+    <li><span class="num">02</span> How It Works</li>
+    <li><span class="num">03</span> The Process, Step By Step</li>
+    <li><span class="num">04</span> Built For Overseas Investors</li>
+    <li><span class="num">05</span> Frequently Asked Questions</li>
+    <li><span class="num">06</span> Investor Stories</li>
+    <li><span class="num">07</span> Risks, Disclaimer &amp; Next Steps</li>
+  </ol>
+  <p class="intro-text">This guide is here to give you a clear, honest picture of this off-market opportunity: current pricing, how the income and management work, and the exact steps between registering your interest and receiving your first rental payment.</p>
+  <p class="intro-text">By the time you finish this, you should know most of what we'd otherwise spend the first few minutes of a call explaining, so that call can focus on your specific situation instead.</p>
+  <div class="page-num">02</div>
+</div>
+
+<!-- PAGE 3: THE OPPORTUNITY -->
+<div class="page">
+  <span class="eyebrow">01 &nbsp;·&nbsp; The Opportunity</span>
+  <h2 class="section-title">Off Market Exclusive</h2>
+  <p class="section-sub">Completed buy to let apartments, ready now.</p>
+
+  <div class="price-tiles">
+    <div class="price-tile">
+      <span class="price-tile-label">1 Bed</span>
+      <span class="price-tile-from">From</span>
+      <span class="price-tile-value">HK$1,300,000</span>
+      <span class="price-tile-gbp">&asymp; £130,000</span>
+    </div>
+    <div class="price-tile">
+      <span class="price-tile-label">2 Bed</span>
+      <span class="price-tile-from">From</span>
+      <span class="price-tile-value">HK$1,600,000</span>
+      <span class="price-tile-gbp">&asymp; £160,000</span>
+    </div>
+  </div>
+
+  <div class="fact-strip">
+    <div class="fact-item"><span>&#10003;</span>Cash Buyers Only, No Mortgages</div>
+    <div class="fact-item"><span>&#10003;</span>Assured, Long Term &amp; High Yield</div>
+    <div class="fact-item"><span>&#10003;</span>Fully Managed, All Costs Included</div>
+  </div>
+
+  <p>This is a completed development, not an off-plan purchase. Units are ready now, so once your purchase completes, our management team can begin sourcing a tenant immediately rather than waiting on construction.</p>
+
+  <div class="stat-strip">
+    <div class="stat"><span class="num">12%</span><span class="label">Target Net Yield</span></div>
+    <div class="stat"><span class="num">100+</span><span class="label">Properties Delivered</span></div>
+    <div class="stat"><span class="num">4.8&#9733;</span><span class="label">Trustpilot Rating</span></div>
+  </div>
+
+  <div class="callout"><strong>A note on the 12% figure:</strong> this is a net yield, calculated after all costs and expenses, not a headline gross number.</div>
+
+  <div class="page-num">03</div>
+</div>
+
+<!-- PAGE 4: HOW IT WORKS -->
+<div class="page">
+  <span class="eyebrow">02 &nbsp;·&nbsp; How It Works</span>
+  <h2 class="section-title">Understanding The Investment</h2>
+  <p class="section-sub">What's handled for you, and how the income reaches you.</p>
+
+  <div class="two-col">
+    <div class="col">
+      <h3>Fully Managed</h3>
+      <ul>
+        <li>Tenant sourcing</li>
+        <li>Rent collection</li>
+        <li>Day-to-day property management</li>
+        <li>All handled on your behalf as part of the service</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h3>You're Responsible For</h3>
+      <ul>
+        <li>The purchase price of the property, paid in cash</li>
+        <li>Legal fees and Stamp Duty Land Tax, where applicable</li>
+        <li>Ongoing due diligence on your investment</li>
+      </ul>
+    </div>
+  </div>
+
+  <p style="margin-top:20px;">Rental income is paid to you directly, with full transparency at every step, so you always know where you stand. Because this is a fully managed service, you don't need to be in the UK, or hands-on, to hold the investment.</p>
+
+  <div class="callout">The 12% net yield figure reflects income after costs, so what you see is close to what you actually keep, rather than a gross number that gets eroded by fees and expenses you only discover later.</div>
+  <div class="page-num">04</div>
+</div>
+
+<!-- PAGE 5: THE PROCESS -->
+<div class="page">
+  <span class="eyebrow">03 &nbsp;·&nbsp; The Exact Process</span>
+  <h2 class="section-title">From Registering Interest To First Rent Payment</h2>
+  <p class="section-sub">Exactly what happens, in order, if you decide to move forward. Typically 30 to 60 days start to finish.</p>
+
+  <ol class="steps">
+    <li><div class="step-body"><span class="step-day">Day 1</span><b>Register your interest</b><span>Submit your details and we'll follow up with current pricing, availability and this guide.</span></div></li>
+    <li><div class="step-body"><span class="step-day">Day 1 to 3</span><b>Discovery call</b><span>A short, no-obligation call at a time that works for your time zone, to answer any questions this guide didn't cover.</span></div></li>
+    <li><div class="step-body"><span class="step-day">Day 3 to 7</span><b>Reservation</b><span>Once you've chosen a unit, you reserve it with a reservation deposit, taking it off the market while contracts are prepared.</span></div></li>
+    <li><div class="step-body"><span class="step-day">Day 7 to 10</span><b>Instruct a solicitor</b><span>You appoint a solicitor to act for you, either your own or one from a panel we can recommend. You're never obligated to use a panel firm.</span></div></li>
+    <li><div class="step-body"><span class="step-day">Day 10 to 20</span><b>Due diligence</b><span>Your solicitor carries out standard property due diligence on your behalf.</span></div></li>
+    <li><div class="step-body"><span class="step-day">Day 20 to 30</span><b>Exchange of contracts</b><span>Contracts are formally exchanged, the agreed deposit is paid, and a completion date is set.</span></div></li>
+    <li><div class="step-body"><span class="step-day">Day 30 to 45</span><b>Completion</b><span>The remaining balance is paid in cash and legal ownership transfers to you. Your name goes on the title deeds.</span></div></li>
+    <li><div class="step-body"><span class="step-day">Day 30 to 45</span><b>Tenant sourcing begins</b><span>Since this is a completed, ready-to-let unit, our management team starts sourcing a tenant as soon as your purchase completes.</span></div></li>
+    <li><div class="step-body"><span class="step-day">Day 30 to 60</span><b>Your income begins</b><span>You start receiving monthly rental income once a tenant is in place, with regular reporting from that point on.</span></div></li>
+  </ol>
+  <p class="section-sub" style="margin-top:10px;">Timings shown are typical estimates and will vary case by case.</p>
+
+  <div class="callout">Nothing in this process skips a step you'd expect from any UK property purchase: cash purchase, solicitor-led exchange and completion, title deeds in your name. The difference is what happens after completion, our management partner takes over the operational side rather than you finding and managing a tenant yourself.</div>
+  <div class="page-num">05</div>
+</div>
+
+<!-- PAGE 6: BUILT FOR OVERSEAS INVESTORS -->
+<div class="page">
+  <span class="eyebrow">04 &nbsp;·&nbsp; For Overseas Investors</span>
+  <h2 class="section-title">Investing Remotely, Made Straightforward</h2>
+  <p class="section-sub">Every step of the process is designed to work whether you're in Hong Kong, Singapore, or anywhere else.</p>
+
+  <div class="two-col">
+    <div class="col">
+      <h3>Cash Purchase</h3>
+      <p>No mortgage option, cash purchase only. This simplifies the process considerably for overseas buyers, no lender approval, no financing conditions.</p>
+    </div>
+    <div class="col">
+      <h3>Remote Onboarding</h3>
+      <p>Identity checks, paperwork and solicitor instruction are all designed to be completed without visiting the UK.</p>
+    </div>
+  </div>
+  <div class="two-col" style="margin-top:8px;">
+    <div class="col">
+      <h3>Freehold Title, Your Name</h3>
+      <p>You own the asset outright, the same as any UK resident buyer, with your name on the title deeds.</p>
+    </div>
+    <div class="col">
+      <h3>Calls On Your Schedule</h3>
+      <p>Discovery calls and check-ins are booked at a time that fits your time zone, not just UK business hours.</p>
+    </div>
+  </div>
+  <div class="page-num">06</div>
+</div>
+
+<!-- PAGE 7: FAQ -->
+<div class="page">
+  <span class="eyebrow">05 &nbsp;·&nbsp; Common Questions</span>
+  <h2 class="section-title">Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <p class="q">Can I mortgage the property?</p>
+    <p class="a">No, this is a cash purchase only. There's no mortgage option on this opportunity, which simplifies the process considerably for overseas buyers.</p>
+  </div>
+  <div class="faq-item">
+    <p class="q">Is the property fully managed?</p>
+    <p class="a">Yes. Tenant sourcing, rent collection and day-to-day management are handled on your behalf as part of the service, so you don't need to be in the UK, or hands-on, to hold the investment.</p>
+  </div>
+  <div class="faq-item">
+    <p class="q">Is the yield really 12% net?</p>
+    <p class="a">Yes. The 12% figure is a net yield, calculated after all costs and expenses, not a headline gross number.</p>
+  </div>
+  <div class="faq-item">
+    <p class="q">How long until I can receive a return on investment?</p>
+    <p class="a">Typically 30 to 60 days from reservation to your first rental payment. Since this is a completed development rather than off-plan, our management team starts sourcing a tenant as soon as your purchase completes, so income begins as quickly as the letting process allows rather than waiting on construction.</p>
+  </div>
+  <div class="faq-item">
+    <p class="q">Is any of this financial advice?</p>
+    <p class="a">No. This guide is for general information only. It isn't personal financial advice and nothing here should be treated as a recommendation. We'd always encourage independent financial and legal advice before committing any capital.</p>
+  </div>
+
+  <div class="cta-box">
+    <h3>Have a question this didn't answer?</h3>
+    <p>Book a short call with our team, we'll walk through anything in this guide you'd like to go over in more depth.</p>
+  </div>
+  <div class="page-num">07</div>
+</div>
+
+<!-- PAGE 8: TESTIMONIALS -->
+<div class="page">
+  <span class="eyebrow">06 &nbsp;·&nbsp; Proof, Not Just Promises</span>
+  <h2 class="section-title">Investor Stories</h2>
+  <p class="section-sub">Real words from real clients who've invested through Golden Key Property.</p>
+
+  <div class="t-card">
+    <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+    <p class="t-text">Very smooth process from Hong Kong, everything can be done online and through WhatsApp, no need to fly over. Rental yield is as promised and tenant found very fast. Professional team, will introduce to my friends.</p>
+    <div class="t-author">Jian L. <span class="t-role">&middot; Investor, Hong Kong</span></div>
+  </div>
+  <div class="t-card">
+    <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+    <p class="t-text">First time buying property overseas so I was quite worried, but the team explained everything clearly and the paperwork was handled properly. Off-market means better price than what I saw on the property portals. Very satisfied with the return so far.</p>
+    <div class="t-author">Jane T. <span class="t-role">&middot; Investor, Singapore</span></div>
+  </div>
+  <div class="t-card">
+    <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+    <p class="t-text">Good investment, completion was on time and rental income started right away. Communication could be a bit faster given the time difference but overall no problem, they always reply. Would buy another property through them.</p>
+    <div class="t-author">Huan W. <span class="t-role">&middot; Investor, Singapore</span></div>
+  </div>
+  <div class="t-card">
+    <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+    <p class="t-text">Already have a few properties in the UK so I know what to look for, this one was priced well below market and the numbers are accurate, not exaggerated like some other agents. Whole transaction handled remotely, very convenient. Highly recommend.</p>
+    <div class="t-author">David R. <span class="t-role">&middot; Investor, UK</span></div>
+  </div>
+  <div class="page-num">08</div>
+</div>
+
+<!-- PAGE 9: DISCLAIMER -->
+<div class="page">
+  <span class="eyebrow">Important Information</span>
+  <h2 class="section-title">Risk Warning &amp; Disclaimer</h2>
+  <div class="disclaimer-box" style="margin-top: 20px;">
+    <p>This guide is provided for general information purposes only, to help readers understand this off-market buy to let opportunity. Nothing here describes the final terms of, or constitutes an offer, solicitation, invitation, or inducement to invest in, any specific property, scheme, or investment opportunity.</p>
+    <p>Nothing in this guide constitutes financial, legal, tax, or investment advice, and none of it should be relied on as such. Golden Key Property (a trading name of Silver Key Property) is not authorised or regulated by the Financial Conduct Authority to give investment advice, and nothing here is a personal recommendation.</p>
+    <p>Pricing shown reflects our current off-market allocation at the time of writing. Availability and pricing are subject to change; individual units may no longer be available. HKD figures are indicative only, based on an approximate rate of £1 = HK$10, and are provided for reference. All transactions are conducted in GBP; exchange rates fluctuate and are not guaranteed.</p>
+    <p>Property investment of any kind carries risk. Property values can fall as well as rise, income is not guaranteed, and property is generally illiquid, it may be difficult to sell or exit quickly. Past performance is not a reliable indicator of future results. You should not invest money you cannot afford to lose, and should seek independent financial and legal advice before making any investment decision.</p>
+    <p>This guide is intended for recipients based in Hong Kong, Singapore, and other jurisdictions where receiving this information is not restricted by local law. If you are unsure whether you are permitted to receive this material, please seek independent advice before proceeding.</p>
+    <p>Golden Key Property &nbsp;&middot;&nbsp; a trading name of Silver Key Property, registered in England &amp; Wales, registration number 16016190 &nbsp;&middot;&nbsp; 167-169 Great Portland Street, 5th Floor, London, England, W1W 5PF &nbsp;&middot;&nbsp; info@silverkeyproperty.co.uk</p>
+  </div>
+  <div class="page-num">09</div>
+</div>
+
+</body>
+</html>
