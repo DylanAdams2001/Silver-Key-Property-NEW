@@ -574,6 +574,11 @@ document.getElementById('submitBtn').addEventListener('click', function () {
   if (!fbc && fbclid) fbc = 'fb.1.' + Date.now() + '.' + fbclid;
   const fbp = getCookie('_fbp');
 
+  // GHL has no way to know the lead's country unless we tell it explicitly,
+  // so without this it silently falls back to the account's default country
+  // (UK) on every new contact regardless of who actually submitted the form.
+  const selectedCountry = phoneIti.getSelectedCountryData() || {};
+
   fetch(GHL_WEBHOOK_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -582,6 +587,8 @@ document.getElementById('submitBtn').addEventListener('click', function () {
       last_name: lnameEl.value.trim(),
       email: emailEl.value.trim(),
       phone: phoneIti.getNumber(),
+      country: selectedCountry.name || '',
+      country_code: (selectedCountry.iso2 || '').toUpperCase(),
       source: 'Hong Kong Investor Funnel',
       market: 'Hong Kong',
       event_id: eventId,

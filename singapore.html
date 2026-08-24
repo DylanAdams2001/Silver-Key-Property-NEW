@@ -23,11 +23,11 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2148765152722188');
+fbq('init', '1821973349036099');
 fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2148765152722188&ev=PageView&noscript=1"
+src="https://www.facebook.com/tr?id=1821973349036099&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel -->
 <style>
@@ -510,7 +510,7 @@ src="https://www.facebook.com/tr?id=2148765152722188&ev=PageView&noscript=1"
 <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.8.0/build/js/intlTelInputWithUtils.min.js"></script>
 <script>
 // Paste your GHL "Inbound Webhook" trigger URL here (Workflows > Add Trigger > Inbound Webhook).
-const GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/HEOut7IJQ2GxJIUq9qIb/webhook-trigger/6be855f0-003d-46a0-b83b-a2c65a978f74";
+const GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/HEOut7IJQ2GxJIUq9qIb/webhook-trigger/1c3d599c-77af-46aa-9bda-45f309d956ad";
 
 function getCookie(name) {
   const match = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
@@ -574,6 +574,11 @@ document.getElementById('submitBtn').addEventListener('click', function () {
   if (!fbc && fbclid) fbc = 'fb.1.' + Date.now() + '.' + fbclid;
   const fbp = getCookie('_fbp');
 
+  // GHL has no way to know the lead's country unless we tell it explicitly,
+  // so without this it silently falls back to the account's default country
+  // (UK) on every new contact regardless of who actually submitted the form.
+  const selectedCountry = phoneIti.getSelectedCountryData() || {};
+
   fetch(GHL_WEBHOOK_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -582,6 +587,8 @@ document.getElementById('submitBtn').addEventListener('click', function () {
       last_name: lnameEl.value.trim(),
       email: emailEl.value.trim(),
       phone: phoneIti.getNumber(),
+      country: selectedCountry.name || '',
+      country_code: (selectedCountry.iso2 || '').toUpperCase(),
       source: 'Singapore Investor Funnel',
       market: 'Singapore',
       event_id: eventId,
